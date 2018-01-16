@@ -4,7 +4,7 @@
  @author:Roberto Ventura
  @version 1.0 */
 
-public class Homework {
+public class Homeworkzero {
 
     public static void main(String[] args) {
 	
