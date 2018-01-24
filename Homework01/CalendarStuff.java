@@ -3,16 +3,16 @@
  *  Authors       :  Roberto Ventura , B.J. Johnson (for Template)
  *  Date          :  2018-01-25 
  *  Description   :  This file provides the supporting methods for the CountTheDays program which will
- *                   calculate the number of days between two dates.  It shows the use of modularization
+ *                   calculate the number of days between two dates. It shows the use of modularization
  *                   when writing Java code, and how the Java compiler can "figure things out" on its
- *                   own at "compile time".  It also provides examples of proper documentation, and uses
+ *                   own at "compile time". It also provides examples of proper documentation, and uses
  *                   the source file header template as specified in the "Greeter.java" template program
  *                   file for use in CMSI 186, Spring 2017.To create a method that determines if a year entered 
- *					 by the user is a leap year or not. This method will also be implemented to determine how 
- *					 many days are in any specified year. Create a method that determines if a date entered by 
- *					 the user is a valid date. Create a method that determines the amount of days between two specified days.
+ *		     by the user is a leap year or not. This method will also be implemented to determine how 
+ *		     many days are in any specified year. Create a method that determines if a date entered by 
+ *		     the user is a valid date. Create a method that determines the amount of days between two specified days.
  *  Notes         :  Did not use all methods provided in original template. 
-					 This includes:dateEquals, compareDate, toMonthString, and toDayOfWeekString
+		     This includes: dateEquals, compareDate, toMonthString, and toDayOfWeekString
  *  Warnings      :  None
  *  Exceptions    :  None
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,7 +22,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-01-02  B.J. Johnson  Initial writing and release
  *  @version 1.0.1  2017-12-25  B.J. Johnson  Updated for Spring 2018
-    @version 1.0.2  2018-01-25  Bob           To write code for CalendarStuff
+ *  @version 1.0.2  2018-01-25  Bob           To write code for CalendarStuff
  */
 public class CalendarStuff {
 	
@@ -35,7 +35,7 @@ public class CalendarStuff {
 		long daysI = 0;
 		boolean Leap = isLeapYear(year);
 		int intmonth = (int) month;
-		if (intmonth >= 1 || intmonth <= 12) {    				//check if month as integer is in bounds, if not program will stop
+		if (intmonth >= 1 || intmonth <= 12) {    		//check if month as integer is in bounds, if not program will stop
 			String some = "unneccessary string to fill in space since month is correct";
 		}
 		else {
@@ -81,20 +81,20 @@ public class CalendarStuff {
 		int intmonth = (int) month;
 		int intday = (int) day;
 		if (intmonth == 2) {
-			if (isLeapYear(year)) {								//if month is february, check if leap year and 
-			return day <= 29;									//if day is less than or is 29
+			if (isLeapYear(year)) {			        //if month is february, check if leap year and 
+			return day <= 29;				//if day is less than or is 29
 			}
 			else {
-			return day <=28;									//if not leap year, if day is less than or is 28
+			return day <=28;				//if not leap year, if day is less than or is 28
 			}
 		}
 		if (intmonth >= 1 && intmonth <= 12) {
 			long checkDay = daysInMonth(month,year);
-			valid = (intday <= checkDay && day >= 1);           //check if day specified is within bound of days in month
+			valid = (intday <= checkDay && day >= 1);       //check if day specified is within bound of days in month
 			return valid;
 		}
 		else{
-			return valid = false;								//if intmonth is not between 0 and 12, must be invalid date
+			return valid = false;				//if intmonth is not between 0 and 12, must be invalid date
 		}  
 	}
 		
@@ -108,7 +108,7 @@ public class CalendarStuff {
 			return daysB;														//check if same date
 		}
 		else if ((month0 == month1) && (year0 == year1)) {
-			return daysB = Math.abs(day0 - day1);								//check if same year and month, then subract days
+			return daysB = Math.abs(day0 - day1);		//check if same year and month, then subract days
 		}
 		long older, olderm, olderd, younger, youngerm, youngerd; 
 		if (year0 > year1) {
@@ -130,24 +130,24 @@ public class CalendarStuff {
 		if ((older == younger) && (olderm - youngerm == 1)){
 			return daysB = daysInMonth(youngerm, younger) - youngerd + olderd;
 		}
-		daysB = daysInMonth(youngerm, younger) - youngerd;		// days from day to end of first month
-	    daysB = daysB + olderd;		                            // days into last month 	
+		daysB = daysInMonth(youngerm, younger) - youngerd;     // days from day to end of first month
+	    daysB = daysB + olderd;		                       // days into last month 	
 		for (long i = (youngerm + 1) ; i < 12.99 ; i++) {
 			if (true == isLeapYear(younger)){
 				daysB = daysB + 1;
 			}
-			daysB = daysB + daysInMonth(i,younger);    			//count days in rest of year of first year
+			daysB = daysB + daysInMonth(i,younger);        //count days in rest of year of first year
 		}
-		for (long j = (younger + 1); j < older ; j++) { 		//for loop, for each year until reaches first day of second date
+		for (long j = (younger + 1); j < older ; j++) {        //for loop, for each year until reaches first day of second date
 			if (isLeapYear(j)) {								
 				daysB = daysB + 366;
-			}													//number of days based on if leap year or not
+			}					       //number of days based on if leap year or not
 			else {
 				daysB = daysB + 365;
 			}		
 		}
 		for (long k = 1; k < olderm; k++){
-			daysB = daysB + daysInMonth(k,older); 				//add number of days in each month until it reaches last month
+			daysB = daysB + daysInMonth(k,older); 	      //add number of days in each month until it reaches last month
 		}										
 		return daysB;
 	}
