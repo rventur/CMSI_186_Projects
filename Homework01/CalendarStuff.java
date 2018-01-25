@@ -105,10 +105,10 @@ public class CalendarStuff {
 			System.exit(0);
 		}
 		else if((month0 == month1) && (day0 == day1) && (year0 == year1)) {
-			return daysB;														//check if same date
+			return daysB;								//check if same date
 		}
 		else if ((month0 == month1) && (year0 == year1)) {
-			return daysB = Math.abs(day0 - day1);		//check if same year and month, then subract days
+			return daysB = Math.abs(day0 - day1);		//check if same year and month, then subtract days
 		}
 		long older, olderm, olderd, younger, youngerm, youngerd; 
 		if (year0 > year1) {
@@ -118,7 +118,7 @@ public class CalendarStuff {
 			 younger = year1;
 			 youngerm = month1;                  
 			 youngerd = day1; 									
-		} 														//place later year as older and earlier as younger
+		} 							//place later year as older and earlier as younger
 		else {
 			older = year1;
 		    olderm = month1;
