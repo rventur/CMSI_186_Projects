@@ -76,6 +76,27 @@ public class CalendarStuff {
 		return daysI;
 	}
 	
+	
+	//methods not written
+	public static boolean dateEquals(long month1, long day1, long year1, long month2, long day2, long year2) {
+	    return true;  // replace this with the actual code
+	}
+	public static int compareDate(long month1, long day1, long year1, long month2, long day2, long year2) {
+	    return 0;  // replace this with the actual code
+	}
+    	public static String toMonthString(int month ) {
+            switch( month - 1 ) {
+            default: throw new IllegalArgumentException( "Illegal month value given to 'toMonthString()'." );
+            }
+    	 }
+	 public static String toDayOfWeekString( int day ) {
+	      switch( day - 1 ) {
+	         default       : throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
+	      }
+	  }
+	  //end of methods not writtten
+	
+	
 	public static boolean isValidDate(long month, long day, long year) {
 		boolean valid;
 		int intmonth = (int) month;
@@ -112,35 +133,35 @@ public class CalendarStuff {
 		}
 		long older, olderm, olderd, younger, youngerm, youngerd; 
 		if (year0 > year1) {
-			 older = year0;
-			 olderm = month0;
-			 olderd = day0;
-			 younger = year1;
-			 youngerm = month1;                  
-			 youngerd = day1; 									
+		    older = year0;
+		    olderm = month0;
+		    olderd = day0;
+		    younger = year1;
+		    youngerm = month1;                  
+		    youngerd = day1; 									
 		} 							//place later year as older and earlier as younger
 		else {
-			older = year1;
+		    older = year1;
 		    olderm = month1;
 		    olderd = day1;
 		    younger = year0;
 		    youngerm = month0;
-		 	youngerd = day0;
+   	      	    youngerd = day0;
 		}
 		if ((older == younger) && (olderm - youngerm == 1)){
-			return daysB = daysInMonth(youngerm, younger) - youngerd + olderd;
+		    return daysB = daysInMonth(youngerm, younger) - youngerd + olderd;
 		}
 		daysB = daysInMonth(youngerm, younger) - youngerd;     // days from day to end of first month
-	    daysB = daysB + olderd;		                       // days into last month 	
+	        daysB = daysB + olderd;		                       // days into last month 	
 		for (long i = (youngerm + 1) ; i < 12.99 ; i++) {
 			if (true == isLeapYear(younger)){
-				daysB = daysB + 1;
+			        daysB = daysB + 1;
 			}
-			daysB = daysB + daysInMonth(i,younger);        //count days in rest of year of first year
+			        daysB = daysB + daysInMonth(i,younger);   //count days in rest of year of first year
 		}
 		for (long j = (younger + 1); j < older ; j++) {        //for loop, for each year until reaches first day of second date
 			if (isLeapYear(j)) {								
-				daysB = daysB + 366;
+			        daysB = daysB + 366;
 			}					       //number of days based on if leap year or not
 			else {
 				daysB = daysB + 365;
