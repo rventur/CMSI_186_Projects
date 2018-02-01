@@ -46,8 +46,8 @@ public class StringStuff {
 		  for (int j = 0; j < vowels.length(); j++) {              //second for loop to compare each letter to a vowel
 		      if (s.charAt(i) == vowels.charAt(j)) {
 			    return true;
-		     }
-	      }
+		      }
+	          }
 	   }
        return false;
    }
@@ -95,7 +95,7 @@ public class StringStuff {
 			  if (s.charAt(p) == ALPHABET.charAt(e)) {              //if even letter added to empty variable evens
 				  evens += s.charAt(p);
 			  }
-			  else if (s.charAt(p) == alphabet.charAt(e)){ 
+			  else if (s.charAt(p) == alphabet.charAt(e)) { 
 				  evens += s.charAt(p);
 			  }
 		  }
@@ -118,7 +118,7 @@ public class StringStuff {
 			  if (s.charAt(l) == ALPHABET.charAt(o)) {               //if odd letter added to empty variable odds
 				  odds += s.charAt(l);
 			  }
-			  else if (s.charAt(l) == alphabet.charAt(o)){ 
+			  else if (s.charAt(l) == alphabet.charAt(o)) { 
 				  odds += s.charAt(l);
 			  }
 		  }
