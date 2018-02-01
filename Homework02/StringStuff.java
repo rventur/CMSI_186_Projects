@@ -43,7 +43,7 @@ public class StringStuff {
 	  s = s.toLowerCase();
 	  int n = s.length();
 	  for (int i = 0; i < n; i++) {                                    //for loop to carry value of individual letters in string S
-		  for (int j = 0; j < vowels.length(); j++) {                    //second for loop to compare each letter to a vowel
+		  for (int j = 0; j < vowels.length(); j++) {              //second for loop to compare each letter to a vowel
 		      if (s.charAt(i) == vowels.charAt(j)) {
 			    return true;
 		     }
@@ -62,7 +62,7 @@ public class StringStuff {
  	  String reverse = "";                                             //declare reverse as an empty string
  	  int num = s.length() - 1;                            
  	  for (int i = num; i > -.5; i--) {                                //for loop going from the last letter of the input string 
- 		  reverse += s.charAt(i);                                        //and puts each letter into variable reverse
+ 		  reverse += s.charAt(i);                                  //and puts each letter into variable reverse
  	  }
        return reverse;
     }
@@ -78,7 +78,7 @@ public class StringStuff {
    public static boolean isPalindrome (String s) {
 	  s = s.toLowerCase();                                              //changes input string to lowercase
 	  return (s.contentEquals(reverse(s)));                             //takes reverse of input string using method reverse 
-   }                                                                  //and compares it to original string
+   }                                                                        //and compares it to original string
 
   /**
    * Method to return the characters in a string that correspond to the &quot;EVEN&quot; index
@@ -92,7 +92,7 @@ public class StringStuff {
 	  String evens = "";
 	  for (int p = 0; p < s.length(); p++ ) {
 		  for (int e = 2; e<27; e+=2) {                                 //for loop that goes checks alphabet for even letters
-			  if (s.charAt(p) == ALPHABET.charAt(e)) {                    //if even letter added to empty variable evens
+			  if (s.charAt(p) == ALPHABET.charAt(e)) {              //if even letter added to empty variable evens
 				  evens += s.charAt(p);
 			  }
 			  else if (s.charAt(p) == alphabet.charAt(e)){ 
@@ -115,7 +115,7 @@ public class StringStuff {
 	  String odds = "";
  	  for (int l = 0; l < s.length(); l++) {
 		  for (int o = 1; o < 27; o +=2) {                               //for loop that goes checks alphabet for odd letters
-			  if (s.charAt(l) == ALPHABET.charAt(o)) {                     //if odd letter added to empty variable odds
+			  if (s.charAt(l) == ALPHABET.charAt(o)) {               //if odd letter added to empty variable odds
 				  odds += s.charAt(l);
 			  }
 			  else if (s.charAt(l) == alphabet.charAt(o)){ 
