@@ -179,6 +179,7 @@ public class DiceSet {
 	   thing.roll();
 	   System.out.println(thing.toString());
 	   System.out.println("sum is " + thing.sum());
+	   System.out.println("In this DiceSet, the first dice is " + thing.getIndividual(0));
 	   System.out.println("Do these dice have the same number of dice, sides, sum, and values(in any order) ? : " + some.isIdentical(thing));
 	   System.out.println("\n Yo! I made this new set by rolling the first dice :)");
 	   thing.rollIndividual(0);
@@ -190,12 +191,14 @@ public class DiceSet {
 	   set.roll();
 	   System.out.println(toString(set));
 	   System.out.println("sum is " + set.sum());
+	   System.out.println("In this DiceSet, the third dice is " + set.getIndividual(2));
 	   
 	   System.out.println("\n Yo! I made this new set :)");
 	   DiceSet let = new DiceSet(4,5);
 	   let.roll();
 	   System.out.println(toString(let));
 	   System.out.println("sum is " + let.sum());
+	   System.out.println("In this DiceSet, the fourth dice is " + let.getIndividual(3));
 	   System.out.println("Do these dice have the same number of dice, sides, sum, and values(in any order) ? : " + set.isIdentical(let));
 	   
 	   DiceSet shei = new DiceSet(3,15);
@@ -203,12 +206,18 @@ public class DiceSet {
 	   System.out.println("\n Yo! I made this new set");
 	   System.out.println(toString(shei));
 	   System.out.println("sum is " + shei.sum());
+	   System.out.println("In this DiceSet, the first dice is " + shei.getIndividual(0));
+	   System.out.println("\n Yo! I made this new set by rolling the second dice :)");
+	   shei.rollIndividual(1);
 	  
 	   DiceSet sse = new DiceSet(3,10);
 	   sse.roll();
 	   System.out.println("\n Yo! I made this new set");
 	   System.out.println(sse.toString());
 	   System.out.println("sum is " + sse.sum());
+	   System.out.println("In this DiceSet, the first dice is " + sse.getIndividual(0));
+	   System.out.println("\n Yo! I made this new set by rolling the second dice :)");
+	   sse.rollIndividual(1);
 	   System.out.println("Do these dice have the same number of dice, sides, sum, and values(in any order) ? : " + shei.isIdentical(sse));
 	   
 	   DiceSet rick = new DiceSet(7,7);
@@ -216,12 +225,16 @@ public class DiceSet {
 	   System.out.println("\n Yo! I made this new set");
 	   System.out.println(toString(rick));
 	   System.out.println("sum is " + rick.sum());
+	   System.out.println("In this DiceSet, the first dice is " + rick.getIndividual(0));
+	   System.out.println("\n Yo! I made this new set by rolling the second dice :)");
+	   rick.rollIndividual(1);
 	  
 	   DiceSet james = new DiceSet(7,7);
 	   james.roll();
 	   System.out.println("\n Yo! I made this new set");
 	   System.out.println(james.toString());
 	   System.out.println("sum is " + james.sum());
+	   System.out.println("In this DiceSet, the first dice is " + james.getIndividual(0));
 	   System.out.println("Do these dice have the same number of dice, sides, sum, and values(in any order) ? : " + rick.isIdentical(james));
    }
 
