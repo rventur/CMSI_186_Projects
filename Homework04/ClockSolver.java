@@ -25,7 +25,7 @@ public class ClockSolver {
    *  Class field definintions go here
    */
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
-   private final double EPSILON                    = .001;      // small value for double-precision comparisons
+   private final double EPSILON                    = .1;      // small value for double-precision comparisons
    double tangle = 0;
    double slice = 60;
    Clock clock = new Clock();
@@ -59,21 +59,21 @@ public class ClockSolver {
 	  try {
 	     tangle = clock.validateAngleArg(args[0]);	
 	  }
-	  catch (NumberFormatException e) {
-	  	  System.out.println(e.toString());                           //checks for errors in arguments
+	  catch (NumberFormatException e){
+	  	  System.out.println(e.toString());                       //checks for errors in arguments
 	  }
       if (1 == args.length) {
 	       slice = 60.0;
       } 
 	  if (2 == args.length) {
 	     try {
-	         slice = clock.validateTimeSliceArg(args[1]);            //if no time slice in args, set to 60.0
-       }
-	     catch (NumberFormatException e) {
+	         slice = clock.validateTimeSliceArg(args[1]);          //if no time slice in args, set to 60.0
+         }
+	     catch (NumberFormatException e){
 		     System.out.println(e.toString());
 		  
 	     }
-     }
+      }
    }
 
   /**
@@ -92,15 +92,16 @@ public class ClockSolver {
 	  System.out.println( "      Outputting clock as string" );
 	  System.out.println(clock.toString());
 	  System.out.println("\nLooking for an angle of " + cse.tangle + "˚");
-	  System.out.println(" with a time slice of " + clock.TimeSlice + " seconds\n");
-    while (clock.totalSeconds < 43200) {
+	  System.out.println(" with a time slice of " + clock.TimeSlice + " seconds");
+	  System.out.println(" and epsilon of " + cse.EPSILON);
+      while (clock.totalSeconds < 43200) {
 		 if (Math.abs(clock.getHandAngle() - cse.tangle) <= cse.EPSILON) {
 			 System.out.println("Found Target Angle: " + cse.tangle + "˚ at " + clock.toString() );
 			 clock.tick();
 			 continue;		 
 		 }
 		 clock.tick();
-    }
-     System.exit(0);
+      }
+      System.exit( 0 );
    }
 }

@@ -35,7 +35,7 @@ public class Clock {
    private double totalMinutes = 0.0;
    private double handAngle = 0.0;
    public double TimeSlice = 60.0;
-   DecimalFormat df = new DecimalFormat(".##");
+   DecimalFormat df = new DecimalFormat("#0.00");
    
 
   /**
@@ -190,7 +190,7 @@ public class Clock {
 	  else {
 		  hours = Math.ceil(hours);
 	  }
-	  s = hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+	  s = hours + " hours, " + minutes + " minutes, " + df.format(seconds) + " seconds";
       return s;
    }
 
