@@ -1,0 +1,384 @@
+.
+.
+successful compilation
+.
+.
+
+CLOCK CLASS TESTER PROGRAM
+--------------------------
+
+ 
+Creating a new clock: 
+  
+New clock created: 0.0 hours, 0.0 minutes, 0.00 seconds
+    
+Testing validateAngleArg()....
+      sending '  0 degrees', expecting double value   0.0 - got 0.0
+      sending '  360 degrees', expecting double value   360.0 - got 360.0
+      sending '  -10 degrees', expecting error
+     Error, input a non-negative number.
+     Pobrecito!
+ - got -10.0
+      sending '  380 degrees', expecting error
+     Error, input a non-negative number.
+     Pobrecito!
+ - got 380.0
+      sending '  ABC degrees', expecting error
+     Error, input a non-negative number.
+     Pobrecito!
+380.0
+    
+Testing validateTimeSliceArg()....
+      sending '  0.0 seconds', expecting double value   0.0 - got 0.0
+      sending '  1800.0 seconds', expecting double value   1800.0 - got 1800.0
+      sending '  -1800.0 seconds', expecting double value   -1800.0 - got -1800.0
+      sending '  ABC seconds', expecting double value   ABC
+     Error, input a non-negative number.
+     Pobrecito!
+1800.0
+      
+Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+    
+Testing Tick()....
+    Tick of 45 seconds
+45.0
+0.0 hours, 0.0 minutes, 45.00 seconds
+    Tick of 50 seconds
+95.0
+0.0 hours, 1.0 minutes, 35.00 seconds
+    Tick of 1800 seconds
+1895.0
+0.0 hours, 31.0 minutes, 35.00 seconds
+    Tick of 1800 seconds
+3695.0
+1.0 hours, 1.0 minutes, 35.00 seconds
+    Tick of 1800 seconds
+5495.0
+1.0 hours, 31.0 minutes, 35.00 seconds
+6.0 hours, 5.0 minutes, 57.10 seconds
+    
+Testing getHourHandAngle()....
+182.9758475
+    
+Testing getMinuteHandAngle()....
+35.710169999999835
+    
+Testing getHandAngle()....
+147.26567750000015
+    
+Tick of 1801 seconds
+6.0 hours, 35.0 minutes, 58.10 seconds
+    
+Testing getHourHandAngle()....
+197.9841808333333
+    
+Testing getMinuteHandAngle()....
+215.8101700000002
+    
+Testing getHandAngle()....
+17.825989166666886
+
+   Hello world, from the ClockSolver program!!
+
+
+   Sorry you must enter at least one argument
+   Usage: java ClockSolver <angle> [timeSlice]
+   Please try again...........
+
+   Hello world, from the ClockSolver program!!
+
+
+
+     Error, input a non-negative number.
+     Pobrecito!
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of -1.0˚
+ with a time slice of 60.0 seconds
+ and epsilon of 0.1
+
+   Hello world, from the ClockSolver program!!
+
+
+
+     Error, input a non-negative number.
+     Pobrecito!
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 0.0˚
+ with a time slice of -1.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 0.0˚ at 0.0 hours, 0.0 minutes, 0.00 seconds
+Found Target Angle: 0.0˚ at 0.0 hours, 0.0 minutes, -1.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 90.0˚
+ with a time slice of 0.0 seconds
+ and epsilon of 0.1
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 360.0˚
+ with a time slice of 60.0 seconds
+ and epsilon of 0.1
+
+   Hello world, from the ClockSolver program!!
+
+
+
+     Error, input a non-negative number.
+     Pobrecito!
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 90.0˚
+ with a time slice of 1801.0 seconds
+ and epsilon of 0.1
+
+   Hello world, from the ClockSolver program!!
+
+
+
+     Error, input a non-negative number.
+     Pobrecito!
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 90.0˚
+ with a time slice of 1801.0 seconds
+ and epsilon of 0.1
+
+   Hello world, from the ClockSolver program!!
+
+
+
+     Error, input a non-negative number.
+     Pobrecito!
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 0.0˚
+ with a time slice of 60.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 0.0˚ at 0.0 hours, 0.0 minutes, 0.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 30.0˚
+ with a time slice of 60.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 30.0˚ at 0.0 hours, 60.0 minutes, 0.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 30.0˚
+ with a time slice of 10.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 30.0˚ at 0.0 hours, 60.0 minutes, 0.00 seconds
+Found Target Angle: 30.0˚ at 3.0 hours, 21.0 minutes, 50.00 seconds
+Found Target Angle: 30.0˚ at 5.0 hours, 21.0 minutes, 50.00 seconds
+Found Target Angle: 30.0˚ at 6.0 hours, 38.0 minutes, 10.00 seconds
+Found Target Angle: 30.0˚ at 8.0 hours, 38.0 minutes, 10.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 30.0˚
+ with a time slice of 1.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 30.0˚ at 0.0 hours, 5.0 minutes, 27.00 seconds
+Found Target Angle: 30.0˚ at 0.0 hours, 5.0 minutes, 28.00 seconds
+Found Target Angle: 30.0˚ at 0.0 hours, 60.0 minutes, 0.00 seconds
+Found Target Angle: 30.0˚ at 1.0 hours, 0.0 minutes, 1.00 seconds
+Found Target Angle: 30.0˚ at 1.0 hours, 10.0 minutes, 54.00 seconds
+Found Target Angle: 30.0˚ at 1.0 hours, 10.0 minutes, 55.00 seconds
+Found Target Angle: 30.0˚ at 2.0 hours, 5.0 minutes, 27.00 seconds
+Found Target Angle: 30.0˚ at 2.0 hours, 5.0 minutes, 28.00 seconds
+Found Target Angle: 30.0˚ at 2.0 hours, 16.0 minutes, 21.00 seconds
+Found Target Angle: 30.0˚ at 2.0 hours, 16.0 minutes, 22.00 seconds
+Found Target Angle: 30.0˚ at 3.0 hours, 10.0 minutes, 54.00 seconds
+Found Target Angle: 30.0˚ at 3.0 hours, 10.0 minutes, 55.00 seconds
+Found Target Angle: 30.0˚ at 3.0 hours, 21.0 minutes, 49.00 seconds
+Found Target Angle: 30.0˚ at 3.0 hours, 21.0 minutes, 50.00 seconds
+Found Target Angle: 30.0˚ at 4.0 hours, 16.0 minutes, 21.00 seconds
+Found Target Angle: 30.0˚ at 4.0 hours, 16.0 minutes, 22.00 seconds
+Found Target Angle: 30.0˚ at 4.0 hours, 27.0 minutes, 16.00 seconds
+Found Target Angle: 30.0˚ at 4.0 hours, 27.0 minutes, 17.00 seconds
+Found Target Angle: 30.0˚ at 5.0 hours, 21.0 minutes, 48.00 seconds
+Found Target Angle: 30.0˚ at 5.0 hours, 21.0 minutes, 49.00 seconds
+Found Target Angle: 30.0˚ at 5.0 hours, 21.0 minutes, 50.00 seconds
+Found Target Angle: 30.0˚ at 5.0 hours, 32.0 minutes, 43.00 seconds
+Found Target Angle: 30.0˚ at 5.0 hours, 32.0 minutes, 44.00 seconds
+Found Target Angle: 30.0˚ at 6.0 hours, 27.0 minutes, 16.00 seconds
+Found Target Angle: 30.0˚ at 6.0 hours, 27.0 minutes, 17.00 seconds
+Found Target Angle: 30.0˚ at 6.0 hours, 38.0 minutes, 10.00 seconds
+Found Target Angle: 30.0˚ at 6.0 hours, 38.0 minutes, 11.00 seconds
+Found Target Angle: 30.0˚ at 7.0 hours, 32.0 minutes, 43.00 seconds
+Found Target Angle: 30.0˚ at 7.0 hours, 32.0 minutes, 44.00 seconds
+Found Target Angle: 30.0˚ at 7.0 hours, 43.0 minutes, 38.00 seconds
+Found Target Angle: 30.0˚ at 7.0 hours, 43.0 minutes, 39.00 seconds
+Found Target Angle: 30.0˚ at 8.0 hours, 38.0 minutes, 10.00 seconds
+Found Target Angle: 30.0˚ at 8.0 hours, 38.0 minutes, 11.00 seconds
+Found Target Angle: 30.0˚ at 8.0 hours, 49.0 minutes, 5.00 seconds
+Found Target Angle: 30.0˚ at 8.0 hours, 49.0 minutes, 6.00 seconds
+Found Target Angle: 30.0˚ at 9.0 hours, 43.0 minutes, 38.00 seconds
+Found Target Angle: 30.0˚ at 9.0 hours, 43.0 minutes, 39.00 seconds
+Found Target Angle: 30.0˚ at 9.0 hours, 54.0 minutes, 32.00 seconds
+Found Target Angle: 30.0˚ at 9.0 hours, 54.0 minutes, 33.00 seconds
+Found Target Angle: 30.0˚ at 10.0 hours, 49.0 minutes, 5.00 seconds
+Found Target Angle: 30.0˚ at 10.0 hours, 49.0 minutes, 6.00 seconds
+Found Target Angle: 30.0˚ at 11.0 hours, 59.0 minutes, 59.00 seconds
+Found Target Angle: 30.0˚ at 11.0 hours, 54.0 minutes, 32.00 seconds
+Found Target Angle: 30.0˚ at 11.0 hours, 54.0 minutes, 33.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 75.23˚
+ with a time slice of 60.0 seconds
+ and epsilon of 0.1
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 75.23˚
+ with a time slice of 7.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 75.23˚ at 3.0 hours, 2.0 minutes, 42.00 seconds
+Found Target Angle: 75.23˚ at 4.0 hours, 8.0 minutes, 9.00 seconds
+Found Target Angle: 75.23˚ at 5.0 hours, 13.0 minutes, 36.00 seconds
+Found Target Angle: 75.23˚ at 6.0 hours, 19.0 minutes, 3.00 seconds
+Found Target Angle: 75.23˚ at 7.0 hours, 24.0 minutes, 30.00 seconds
+Found Target Angle: 75.23˚ at 8.0 hours, 29.0 minutes, 57.00 seconds
+Found Target Angle: 75.23˚ at 9.0 hours, 35.0 minutes, 24.00 seconds
+Found Target Angle: 75.23˚ at 10.0 hours, 40.0 minutes, 51.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 75.23˚
+ with a time slice of 1.3 seconds
+ and epsilon of 0.1
+Found Target Angle: 75.23˚ at 0.0 hours, 13.0 minutes, 40.30 seconds
+Found Target Angle: 75.23˚ at 0.0 hours, 13.0 minutes, 41.60 seconds
+Found Target Angle: 75.23˚ at 1.0 hours, 19.0 minutes, 7.60 seconds
+Found Target Angle: 75.23˚ at 1.0 hours, 19.0 minutes, 8.90 seconds
+Found Target Angle: 75.23˚ at 2.0 hours, 24.0 minutes, 34.90 seconds
+Found Target Angle: 75.23˚ at 2.0 hours, 24.0 minutes, 36.20 seconds
+Found Target Angle: 75.23˚ at 3.0 hours, 2.0 minutes, 40.30 seconds
+Found Target Angle: 75.23˚ at 3.0 hours, 2.0 minutes, 41.60 seconds
+Found Target Angle: 75.23˚ at 3.0 hours, 30.0 minutes, 2.20 seconds
+Found Target Angle: 75.23˚ at 3.0 hours, 30.0 minutes, 3.50 seconds
+Found Target Angle: 75.23˚ at 4.0 hours, 8.0 minutes, 7.60 seconds
+Found Target Angle: 75.23˚ at 4.0 hours, 8.0 minutes, 8.90 seconds
+Found Target Angle: 75.23˚ at 4.0 hours, 35.0 minutes, 29.50 seconds
+Found Target Angle: 75.23˚ at 4.0 hours, 35.0 minutes, 30.80 seconds
+Found Target Angle: 75.23˚ at 5.0 hours, 13.0 minutes, 34.90 seconds
+Found Target Angle: 75.23˚ at 5.0 hours, 13.0 minutes, 36.20 seconds
+Found Target Angle: 75.23˚ at 5.0 hours, 40.0 minutes, 56.80 seconds
+Found Target Angle: 75.23˚ at 5.0 hours, 40.0 minutes, 58.10 seconds
+Found Target Angle: 75.23˚ at 6.0 hours, 19.0 minutes, 2.20 seconds
+Found Target Angle: 75.23˚ at 6.0 hours, 19.0 minutes, 3.50 seconds
+Found Target Angle: 75.23˚ at 6.0 hours, 46.0 minutes, 24.10 seconds
+Found Target Angle: 75.23˚ at 6.0 hours, 46.0 minutes, 25.40 seconds
+Found Target Angle: 75.23˚ at 7.0 hours, 24.0 minutes, 29.50 seconds
+Found Target Angle: 75.23˚ at 7.0 hours, 24.0 minutes, 30.80 seconds
+Found Target Angle: 75.23˚ at 7.0 hours, 51.0 minutes, 51.40 seconds
+Found Target Angle: 75.23˚ at 8.0 hours, 29.0 minutes, 56.80 seconds
+Found Target Angle: 75.23˚ at 8.0 hours, 29.0 minutes, 58.10 seconds
+Found Target Angle: 75.23˚ at 8.0 hours, 57.0 minutes, 18.70 seconds
+Found Target Angle: 75.23˚ at 9.0 hours, 35.0 minutes, 24.10 seconds
+Found Target Angle: 75.23˚ at 9.0 hours, 35.0 minutes, 25.40 seconds
+Found Target Angle: 75.23˚ at 10.0 hours, 40.0 minutes, 51.40 seconds
+Found Target Angle: 75.23˚ at 10.0 hours, 40.0 minutes, 52.70 seconds
+Found Target Angle: 75.23˚ at 11.0 hours, 46.0 minutes, 18.70 seconds
+Found Target Angle: 75.23˚ at 11.0 hours, 46.0 minutes, 20.00 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 90.0˚
+ with a time slice of 2.5 seconds
+ and epsilon of 0.1
+Found Target Angle: 90.0˚ at 0.0 hours, 16.0 minutes, 22.50 seconds
+Found Target Angle: 90.0˚ at 1.0 hours, 21.0 minutes, 50.00 seconds
+Found Target Angle: 90.0˚ at 3.0 hours, 0.0 minutes, 0.00 seconds
+Found Target Angle: 90.0˚ at 4.0 hours, 5.0 minutes, 27.50 seconds
+Found Target Angle: 90.0˚ at 4.0 hours, 38.0 minutes, 10.00 seconds
+Found Target Angle: 90.0˚ at 5.0 hours, 10.0 minutes, 55.00 seconds
+Found Target Angle: 90.0˚ at 5.0 hours, 43.0 minutes, 37.50 seconds
+Found Target Angle: 90.0˚ at 6.0 hours, 16.0 minutes, 22.50 seconds
+Found Target Angle: 90.0˚ at 6.0 hours, 49.0 minutes, 5.00 seconds
+Found Target Angle: 90.0˚ at 7.0 hours, 21.0 minutes, 50.00 seconds
+Found Target Angle: 90.0˚ at 7.0 hours, 54.0 minutes, 32.50 seconds
+Found Target Angle: 90.0˚ at 10.0 hours, 38.0 minutes, 10.00 seconds
+Found Target Angle: 90.0˚ at 11.0 hours, 43.0 minutes, 37.50 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 180.0˚
+ with a time slice of 1.8 seconds
+ and epsilon of 0.1
+Found Target Angle: 180.0˚ at 0.0 hours, 32.0 minutes, 43.80 seconds
+Found Target Angle: 180.0˚ at 1.0 hours, 38.0 minutes, 11.40 seconds
+Found Target Angle: 180.0˚ at 2.0 hours, 43.0 minutes, 37.20 seconds
+Found Target Angle: 180.0˚ at 2.0 hours, 43.0 minutes, 39.00 seconds
+Found Target Angle: 180.0˚ at 3.0 hours, 49.0 minutes, 4.80 seconds
+Found Target Angle: 180.0˚ at 4.0 hours, 54.0 minutes, 32.40 seconds
+Found Target Angle: 180.0˚ at 6.0 hours, 0.0 minutes, 60.00 seconds
+Found Target Angle: 180.0˚ at 7.0 hours, 5.0 minutes, 27.60 seconds
+Found Target Angle: 180.0˚ at 8.0 hours, 10.0 minutes, 55.20 seconds
+Found Target Angle: 180.0˚ at 9.0 hours, 16.0 minutes, 21.00 seconds
+Found Target Angle: 180.0˚ at 9.0 hours, 16.0 minutes, 22.80 seconds
+Found Target Angle: 180.0˚ at 10.0 hours, 21.0 minutes, 48.60 seconds
+Found Target Angle: 180.0˚ at 11.0 hours, 27.0 minutes, 16.20 seconds
+
+   Hello world, from the ClockSolver program!!
+
+
+      Outputting clock as string
+0.0 hours, 0.0 minutes, 0.00 seconds
+
+Looking for an angle of 90.0˚
+ with a time slice of 1800.0 seconds
+ and epsilon of 0.1
+Found Target Angle: 90.0˚ at 3.0 hours, 0.0 minutes, 0.00 seconds
