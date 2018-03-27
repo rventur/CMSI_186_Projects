@@ -1,10 +1,10 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  File name     :  Clock.java
- *  Purpose       :  Provides a class defining methods for the ClockSolver class
- *  @author       :  B.J. Johnson
+ *  File name     :  Timer.java
+ *  Purpose       :  Provides a class defining methods for the SoccerSim class
+ *  @author       :  Bob
  *  Date written  :  2017-02-28
- *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
- *                   for Homework 4, part 1.  Includes the following:
+ *  Description   :  This class provides a bunch of methods which may be useful for the SoccerSim class
+ *                   Includes the following:
  *                   Tick(), getseconds(), validateTimeSliceArg(), clockString()
  *
  *  Notes         :  None right now.  I'll add some as they occur.
@@ -15,7 +15,7 @@
  *  ---------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
- *  @version 1.0.0  2018-03-15  Bob           Create Clock Class
+ *  @version 1.0.0  2018-03-15  Bob           Create Timer Class
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.text.DecimalFormat;
 public class Timer {
@@ -96,12 +96,12 @@ public class Timer {
 	  String s = "";
 	  tempSeconds = totalSeconds;   
 	  if (totalSeconds < 60) {                                 //temporary seconds to have total of seconds and checks if totalSeconds
-		  seconds = tempSeconds;                               //will set tempseconds in string s as seconds if less than 60
+		  seconds = tempSeconds;                           //will set tempseconds in string s as seconds if less than 60
 	  }
 	  if (totalSeconds > 60) {	
-		  totalMinutes = totalSeconds/60;  	                   //if greater than 60 sec, divide by 60 to num of minutes
+		  totalMinutes = totalSeconds/60;  	           //if greater than 60 sec, divide by 60 to num of minutes
           while (tempSeconds >= 60) {     
-			  tempSeconds = tempSeconds - 60;                  //change total number of seconds and subtract minutes 
+			  tempSeconds = tempSeconds - 60;          //change total number of seconds and subtract minutes 
 	      }                                                    //and will set this to be seconds in string s
 	  }
 	  seconds = tempSeconds;
@@ -120,7 +120,7 @@ public class Timer {
 			  minutes = minutes - 60;
 	      }
 	  }
-	  if ((hours - Math.floor(hours)) < .99) {                //change hours to an integer
+	  if ((hours - Math.floor(hours)) < .99) {                   //change hours to an integer
 		  hours = Math.floor(hours);
 	  }
 	  else {
