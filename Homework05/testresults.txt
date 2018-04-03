@@ -1,0 +1,2328 @@
+.
+.
+======================================
+... Testing Ball class ...
+======================================
+
+Timer CLASS TESTER PROGRAM
+--------------------------
+
+
+Creando una nueva pelota (new ball):
+
+Testing validateXCoordinateArg()....
+      sending '  0.0 in x direction', expecting double value   0.0 - got 0.0
+      sending '  40.0 in x direction', expecting double value   40.0 - got 40.0
+      sending '  -300.0 in x direction', expecting double value   -300.0 - got -300.0
+      sending '  ABC in x direction', expecting ERROR
+Error! au contraire mon frère, use numbers!
+- na son!
+
+Where am I? and how fast am I going?
+position: <-300.00, 0.00>           velocity: <at rest>
+
+Testing validateYCoordinateArg()....
+      sending '  0.0 in y direction', expecting double value   0.0 - got 0.0
+      sending '  20.0 in y direction', expecting double value   20.0 - got 20.0
+      sending '  -170.0 in y direction', expecting double value   -170.0 - got -170.0
+      sending '  XYZ in y direction', expecting ERROR
+Error! au contraire mon frère, use numbers!
+- na son!
+
+Where am I? and how fast am I going?
+position: <-300.00, -170.00>           velocity: <at rest>
+
+Testing validateXVelocity()....
+      sending '  0.0 in y direction', expecting double value   0.0 - got 0.0
+      sending '  20.0 in y direction', expecting double value   20.0 - got 20.0
+      sending '  -170.0 in y direction', expecting double value   -170.0 - got -170.0
+      sending '  XYZ in y direction', expecting ERROR
+Error! au contraire mon frère, use numbers!
+- na son!
+
+Where am I? and how fast am I going?
+position: <-300.00, -170.00>           velocity: <-170.0000, 0.0000> ft/sec
+
+Testing validateYVelocity()....
+      sending '  0.0 in y direction', expecting double value   0.0 - got 0.0
+      sending '  40.0 in y direction', expecting double value   40.0 - got 40.0
+      sending '  -170.0 in y direction', expecting double value   -300.0 - got -300.0
+      sending '  ABC in y direction', expecting ERROR
+Error! au contraire mon frère, use numbers!
+- na son!
+
+Where am I? and how fast am I going?
+position: <-300.00, -170.00>           velocity: <-170.0000, -300.0000> ft/sec
+
+Creating a new ball at (100,200) going (-2,1)ft/sec and time slice of 1 second
+
+Where am I? and how fast am I going?
+position: <100.00, 200.00>           velocity: <-2.0000, 1.0000> ft/sec
+
+Now Rolling
+
+Where am I? and how fast am I going?
+position: <98.00, 201.00>           velocity: <-1.9800, 0.9900> ft/sec
+
+Now Rolling
+
+Where am I? and how fast am I going?
+position: <96.02, 201.99>           velocity: <-1.9602, 0.9801> ft/sec
+
+Now Rolling
+
+Where am I? and how fast am I going?
+position: <94.06, 202.97>           velocity: <-1.9406, 0.9703> ft/sec
+
+Creating a new ball at (50,70) going (4,-6)ft/sec and time slice of 5 seconds
+
+Where am I? and how fast am I going?
+position: <50.00, 70.00>           velocity: <4.0000, -6.0000> ft/sec
+
+Now Rolling
+
+Where am I? and how fast am I going?
+position: <70.00, 40.00>           velocity: <3.8000, -5.7000> ft/sec
+
+Now Rolling
+
+Where am I? and how fast am I going?
+position: <89.00, 11.50>           velocity: <3.6100, -5.4150> ft/sec
+
+Now Rolling
+
+Where am I? and how fast am I going?
+position: <107.05, -15.57>           velocity: <3.4295, -5.1442> ft/sec
+.
+.
+.
+.
+======================================
+... Testing Timer class ...
+======================================
+
+Timer CLASS TESTER PROGRAM
+--------------------------
+
+
+Creating a new timer:
+
+New timer created: 00:00:00.0
+
+Testing validateTimeSliceArg()....
+      sending '  0.0 seconds', expecting double value   0.0 - got 0.0
+      sending '  40.0 seconds', expecting double value   40.0 - got 40.0
+      sending '  -300.0 seconds', expecting error
+java.lang.NumberFormatException
+     Error, i'm not configured to go back in time or count by letters!
+ - got -300.0
+      sending '  ABC seconds', expecting ERROR
+java.lang.NumberFormatException: For input string: "ABC"
+     Error, i'm not configured to go back in time or count by letters!
+- na son!
+
+Testing Tick()....
+Tick of 0 seconds
+ Total Seconds: 0.0
+00:00:00.0
+Tick of 45 seconds
+ Total Seconds: 45.0
+00:00:45.0
+Tick of 50 seconds
+ Total Seconds: 95.0
+00:01:35.0
+Tick of 1800 seconds
+ Total Seconds: 1895.0
+00:31:35.0
+Tick of 1800 seconds
+ Total Seconds: 3695.0
+01:01:35.0
+Tick of 1800 seconds
+ Total Seconds: 5495.0
+01:31:35.0
+Tick of 3600 seconds
+ Total Seconds: 9095.0
+02:31:35.0
+.
+.
+======================================
+... Testing SoccerSim no args...
+======================================
+That's not gonna fly, input arguments to use this program! Program will end now!
+.
+.
+======================================
+... Testing SoccerSim one arg...
+======================================
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+        at SoccerSim.handleArguments(SoccerSim.java:78)
+        at SoccerSim.main(SoccerSim.java:184)
+.
+.
+======================================
+... Testing SoccerSim two args...
+======================================
+Invalid Arguments!, program will end now! Byeee!
+.
+.
+======================================
+... Testing SoccerSim three args...
+======================================
+Invalid Arguments!, program will end now! Byeee!
+.
+.
+======================================
+... Testing SoccerSim six args...
+======================================
+Invalid Arguments!, program will end now! Byeee!
+.
+.
+======================================
+... Testing SoccerSim out of bounds...
+======================================
+
+The pole is at <664.45, 336.68>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 1.0 seconds
+
+Progress report at: 00:00:00.0
+It Seems I have fallen off the field!
+ ball:0 position: <1100.00, 1100.00>           velocity: <99.0000, 99.0000> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim negative time slice...
+======================================
+
+java.lang.NumberFormatException
+     Error, i'm not configured to go back in time or count by letters!
+
+java.lang.NumberFormatException
+     Error, i'm not configured to go back in time or count by letters!
+
+The pole is at <373.99, 55.09>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is -1.0 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <10.00, 10.00>           velocity: <5.0000, 5.0000> ft/sec
+
+
+Progress report at: 00:00:-01.0
+Nothing of Interest has happened
+ ball:0 position: <5.00, 5.00>           velocity: <5.0500, 5.0500> ft/sec
+
+
+Progress report at: 00:00:-02.0
+Nothing of Interest has happened
+ ball:0 position: <-0.05, -0.05>           velocity: <5.1005, 5.1005> ft/sec
+
+
+Progress report at: 00:00:-03.0
+Nothing of Interest has happened
+ ball:0 position: <-5.15, -5.15>           velocity: <5.1515, 5.1515> ft/sec
+
+
+Progress report at: 00:00:-04.0
+Nothing of Interest has happened
+ ball:0 position: <-10.30, -10.30>           velocity: <5.2030, 5.2030> ft/sec
+
+
+Progress report at: 00:00:-05.0
+Nothing of Interest has happened
+ ball:0 position: <-15.51, -15.51>           velocity: <5.2551, 5.2551> ft/sec
+
+
+Progress report at: 00:00:-06.0
+Nothing of Interest has happened
+ ball:0 position: <-20.76, -20.76>           velocity: <5.3076, 5.3076> ft/sec
+
+
+Progress report at: 00:00:-07.0
+Nothing of Interest has happened
+ ball:0 position: <-26.07, -26.07>           velocity: <5.3607, 5.3607> ft/sec
+
+
+Progress report at: 00:00:-08.0
+Nothing of Interest has happened
+ ball:0 position: <-31.43, -31.43>           velocity: <5.4143, 5.4143> ft/sec
+
+
+Progress report at: 00:00:-09.0
+Nothing of Interest has happened
+ ball:0 position: <-36.84, -36.84>           velocity: <5.4684, 5.4684> ft/sec
+
+
+Progress report at: 00:00:-10.0
+Nothing of Interest has happened
+ ball:0 position: <-42.31, -42.31>           velocity: <5.5231, 5.5231> ft/sec
+
+
+Progress report at: 00:00:-11.0
+Nothing of Interest has happened
+ ball:0 position: <-47.83, -47.83>           velocity: <5.5783, 5.5783> ft/sec
+
+
+Progress report at: 00:00:-12.0
+Nothing of Interest has happened
+ ball:0 position: <-53.41, -53.41>           velocity: <5.6341, 5.6341> ft/sec
+
+
+Progress report at: 00:00:-13.0
+Nothing of Interest has happened
+ ball:0 position: <-59.05, -59.05>           velocity: <5.6905, 5.6905> ft/sec
+
+
+Progress report at: 00:00:-14.0
+Nothing of Interest has happened
+ ball:0 position: <-64.74, -64.74>           velocity: <5.7474, 5.7474> ft/sec
+
+
+Progress report at: 00:00:-15.0
+Nothing of Interest has happened
+ ball:0 position: <-70.48, -70.48>           velocity: <5.8048, 5.8048> ft/sec
+
+
+Progress report at: 00:00:-16.0
+Nothing of Interest has happened
+ ball:0 position: <-76.29, -76.29>           velocity: <5.8629, 5.8629> ft/sec
+
+
+Progress report at: 00:00:-17.0
+Nothing of Interest has happened
+ ball:0 position: <-82.15, -82.15>           velocity: <5.9215, 5.9215> ft/sec
+
+
+Progress report at: 00:00:-18.0
+Nothing of Interest has happened
+ ball:0 position: <-88.07, -88.07>           velocity: <5.9807, 5.9807> ft/sec
+
+
+Progress report at: 00:00:-19.0
+Nothing of Interest has happened
+ ball:0 position: <-94.05, -94.05>           velocity: <6.0405, 6.0405> ft/sec
+
+
+Progress report at: 00:00:-20.0
+Nothing of Interest has happened
+ ball:0 position: <-100.10, -100.10>           velocity: <6.1010, 6.1010> ft/sec
+
+
+Progress report at: 00:00:-21.0
+Nothing of Interest has happened
+ ball:0 position: <-106.20, -106.20>           velocity: <6.1620, 6.1620> ft/sec
+
+
+Progress report at: 00:00:-22.0
+Nothing of Interest has happened
+ ball:0 position: <-112.36, -112.36>           velocity: <6.2236, 6.2236> ft/sec
+
+
+Progress report at: 00:00:-23.0
+Nothing of Interest has happened
+ ball:0 position: <-118.58, -118.58>           velocity: <6.2858, 6.2858> ft/sec
+
+
+Progress report at: 00:00:-24.0
+Nothing of Interest has happened
+ ball:0 position: <-124.87, -124.87>           velocity: <6.3487, 6.3487> ft/sec
+
+
+Progress report at: 00:00:-25.0
+Nothing of Interest has happened
+ ball:0 position: <-131.22, -131.22>           velocity: <6.4122, 6.4122> ft/sec
+
+
+Progress report at: 00:00:-26.0
+Nothing of Interest has happened
+ ball:0 position: <-137.63, -137.63>           velocity: <6.4763, 6.4763> ft/sec
+
+
+Progress report at: 00:00:-27.0
+Nothing of Interest has happened
+ ball:0 position: <-144.10, -144.10>           velocity: <6.5410, 6.5410> ft/sec
+
+
+Progress report at: 00:00:-28.0
+Nothing of Interest has happened
+ ball:0 position: <-150.65, -150.65>           velocity: <6.6065, 6.6065> ft/sec
+
+
+Progress report at: 00:00:-29.0
+Nothing of Interest has happened
+ ball:0 position: <-157.25, -157.25>           velocity: <6.6725, 6.6725> ft/sec
+
+
+Progress report at: 00:00:-30.0
+Nothing of Interest has happened
+ ball:0 position: <-163.92, -163.92>           velocity: <6.7392, 6.7392> ft/sec
+
+
+Progress report at: 00:00:-31.0
+Nothing of Interest has happened
+ ball:0 position: <-170.66, -170.66>           velocity: <6.8066, 6.8066> ft/sec
+
+
+Progress report at: 00:00:-32.0
+Nothing of Interest has happened
+ ball:0 position: <-177.47, -177.47>           velocity: <6.8747, 6.8747> ft/sec
+
+
+Progress report at: 00:00:-33.0
+Nothing of Interest has happened
+ ball:0 position: <-184.35, -184.35>           velocity: <6.9435, 6.9435> ft/sec
+
+
+Progress report at: 00:00:-34.0
+Nothing of Interest has happened
+ ball:0 position: <-191.29, -191.29>           velocity: <7.0129, 7.0129> ft/sec
+
+
+Progress report at: 00:00:-35.0
+Nothing of Interest has happened
+ ball:0 position: <-198.30, -198.30>           velocity: <7.0830, 7.0830> ft/sec
+
+
+Progress report at: 00:00:-36.0
+Nothing of Interest has happened
+ ball:0 position: <-205.38, -205.38>           velocity: <7.1538, 7.1538> ft/sec
+
+
+Progress report at: 00:00:-37.0
+Nothing of Interest has happened
+ ball:0 position: <-212.54, -212.54>           velocity: <7.2254, 7.2254> ft/sec
+
+
+Progress report at: 00:00:-38.0
+Nothing of Interest has happened
+ ball:0 position: <-219.76, -219.76>           velocity: <7.2976, 7.2976> ft/sec
+
+
+Progress report at: 00:00:-39.0
+Nothing of Interest has happened
+ ball:0 position: <-227.06, -227.06>           velocity: <7.3706, 7.3706> ft/sec
+
+
+Progress report at: 00:00:-40.0
+Nothing of Interest has happened
+ ball:0 position: <-234.43, -234.43>           velocity: <7.4443, 7.4443> ft/sec
+
+
+Progress report at: 00:00:-41.0
+Nothing of Interest has happened
+ ball:0 position: <-241.88, -241.88>           velocity: <7.5188, 7.5188> ft/sec
+
+
+Progress report at: 00:00:-42.0
+Nothing of Interest has happened
+ ball:0 position: <-249.39, -249.39>           velocity: <7.5939, 7.5939> ft/sec
+
+
+Progress report at: 00:00:-43.0
+Nothing of Interest has happened
+ ball:0 position: <-256.99, -256.99>           velocity: <7.6699, 7.6699> ft/sec
+
+
+Progress report at: 00:00:-44.0
+Nothing of Interest has happened
+ ball:0 position: <-264.66, -264.66>           velocity: <7.7466, 7.7466> ft/sec
+
+
+Progress report at: 00:00:-45.0
+Nothing of Interest has happened
+ ball:0 position: <-272.41, -272.41>           velocity: <7.8241, 7.8241> ft/sec
+
+
+Progress report at: 00:00:-46.0
+Nothing of Interest has happened
+ ball:0 position: <-280.23, -280.23>           velocity: <7.9023, 7.9023> ft/sec
+
+
+Progress report at: 00:00:-47.0
+Nothing of Interest has happened
+ ball:0 position: <-288.13, -288.13>           velocity: <7.9813, 7.9813> ft/sec
+
+
+Progress report at: 00:00:-48.0
+Nothing of Interest has happened
+ ball:0 position: <-296.11, -296.11>           velocity: <8.0611, 8.0611> ft/sec
+
+
+Progress report at: 00:00:-49.0
+Nothing of Interest has happened
+ ball:0 position: <-304.17, -304.17>           velocity: <8.1417, 8.1417> ft/sec
+
+
+Progress report at: 00:00:-50.0
+Nothing of Interest has happened
+ ball:0 position: <-312.32, -312.32>           velocity: <8.2232, 8.2232> ft/sec
+
+
+Progress report at: 00:00:-51.0
+Nothing of Interest has happened
+ ball:0 position: <-320.54, -320.54>           velocity: <8.3054, 8.3054> ft/sec
+
+
+Progress report at: 00:00:-52.0
+Nothing of Interest has happened
+ ball:0 position: <-328.84, -328.84>           velocity: <8.3884, 8.3884> ft/sec
+
+
+Progress report at: 00:00:-53.0
+Nothing of Interest has happened
+ ball:0 position: <-337.23, -337.23>           velocity: <8.4723, 8.4723> ft/sec
+
+
+Progress report at: 00:00:-54.0
+Nothing of Interest has happened
+ ball:0 position: <-345.71, -345.71>           velocity: <8.5571, 8.5571> ft/sec
+
+
+Progress report at: 00:00:-55.0
+Nothing of Interest has happened
+ ball:0 position: <-354.26, -354.26>           velocity: <8.6426, 8.6426> ft/sec
+
+
+Progress report at: 00:00:-56.0
+Nothing of Interest has happened
+ ball:0 position: <-362.90, -362.90>           velocity: <8.7290, 8.7290> ft/sec
+
+
+Progress report at: 00:00:-57.0
+Nothing of Interest has happened
+ ball:0 position: <-371.63, -371.63>           velocity: <8.8163, 8.8163> ft/sec
+
+
+Progress report at: 00:00:-58.0
+Nothing of Interest has happened
+ ball:0 position: <-380.45, -380.45>           velocity: <8.9045, 8.9045> ft/sec
+
+
+Progress report at: 00:00:-59.0
+Nothing of Interest has happened
+ ball:0 position: <-389.35, -389.35>           velocity: <8.9935, 8.9935> ft/sec
+
+
+Progress report at: 00:00:-60.0
+Nothing of Interest has happened
+ ball:0 position: <-398.35, -398.35>           velocity: <9.0835, 9.0835> ft/sec
+
+
+Progress report at: 00:00:-61.0
+Nothing of Interest has happened
+ ball:0 position: <-407.43, -407.43>           velocity: <9.1743, 9.1743> ft/sec
+
+
+Progress report at: 00:00:-62.0
+Nothing of Interest has happened
+ ball:0 position: <-416.61, -416.61>           velocity: <9.2661, 9.2661> ft/sec
+
+
+Progress report at: 00:00:-63.0
+Nothing of Interest has happened
+ ball:0 position: <-425.87, -425.87>           velocity: <9.3587, 9.3587> ft/sec
+
+
+Progress report at: 00:00:-64.0
+Nothing of Interest has happened
+ ball:0 position: <-435.23, -435.23>           velocity: <9.4523, 9.4523> ft/sec
+
+
+Progress report at: 00:00:-65.0
+Nothing of Interest has happened
+ ball:0 position: <-444.68, -444.68>           velocity: <9.5468, 9.5468> ft/sec
+
+
+Progress report at: 00:00:-66.0
+Nothing of Interest has happened
+ ball:0 position: <-454.23, -454.23>           velocity: <9.6423, 9.6423> ft/sec
+
+
+Progress report at: 00:00:-67.0
+Nothing of Interest has happened
+ ball:0 position: <-463.87, -463.87>           velocity: <9.7387, 9.7387> ft/sec
+
+
+Progress report at: 00:00:-68.0
+Nothing of Interest has happened
+ ball:0 position: <-473.61, -473.61>           velocity: <9.8361, 9.8361> ft/sec
+
+
+Progress report at: 00:00:-69.0
+Nothing of Interest has happened
+ ball:0 position: <-483.45, -483.45>           velocity: <9.9345, 9.9345> ft/sec
+
+
+Progress report at: 00:00:-70.0
+Nothing of Interest has happened
+ ball:0 position: <-493.38, -493.38>           velocity: <10.0338, 10.0338> ft/sec
+
+
+Progress report at: 00:00:-71.0
+Nothing of Interest has happened
+ ball:0 position: <-503.42, -503.42>           velocity: <10.1342, 10.1342> ft/sec
+
+
+Progress report at: 00:00:-72.0
+Nothing of Interest has happened
+ ball:0 position: <-513.55, -513.55>           velocity: <10.2355, 10.2355> ft/sec
+
+
+Progress report at: 00:00:-73.0
+Nothing of Interest has happened
+ ball:0 position: <-523.79, -523.79>           velocity: <10.3379, 10.3379> ft/sec
+
+
+Progress report at: 00:00:-74.0
+Nothing of Interest has happened
+ ball:0 position: <-534.12, -534.12>           velocity: <10.4412, 10.4412> ft/sec
+
+
+Progress report at: 00:00:-75.0
+Nothing of Interest has happened
+ ball:0 position: <-544.56, -544.56>           velocity: <10.5456, 10.5456> ft/sec
+
+
+Progress report at: 00:00:-76.0
+Nothing of Interest has happened
+ ball:0 position: <-555.11, -555.11>           velocity: <10.6511, 10.6511> ft/sec
+
+
+Progress report at: 00:00:-77.0
+Nothing of Interest has happened
+ ball:0 position: <-565.76, -565.76>           velocity: <10.7576, 10.7576> ft/sec
+
+
+Progress report at: 00:00:-78.0
+Nothing of Interest has happened
+ ball:0 position: <-576.52, -576.52>           velocity: <10.8652, 10.8652> ft/sec
+
+
+Progress report at: 00:00:-79.0
+Nothing of Interest has happened
+ ball:0 position: <-587.38, -587.38>           velocity: <10.9738, 10.9738> ft/sec
+
+
+Progress report at: 00:00:-80.0
+Nothing of Interest has happened
+ ball:0 position: <-598.36, -598.36>           velocity: <11.0836, 11.0836> ft/sec
+
+
+Progress report at: 00:00:-81.0
+Nothing of Interest has happened
+ ball:0 position: <-609.44, -609.44>           velocity: <11.1944, 11.1944> ft/sec
+
+
+Progress report at: 00:00:-82.0
+Nothing of Interest has happened
+ ball:0 position: <-620.64, -620.64>           velocity: <11.3064, 11.3064> ft/sec
+
+
+Progress report at: 00:00:-83.0
+Nothing of Interest has happened
+ ball:0 position: <-631.94, -631.94>           velocity: <11.4194, 11.4194> ft/sec
+
+
+Progress report at: 00:00:-84.0
+Nothing of Interest has happened
+ ball:0 position: <-643.36, -643.36>           velocity: <11.5336, 11.5336> ft/sec
+
+
+Progress report at: 00:00:-85.0
+Nothing of Interest has happened
+ ball:0 position: <-654.89, -654.89>           velocity: <11.6489, 11.6489> ft/sec
+
+
+Progress report at: 00:00:-86.0
+Nothing of Interest has happened
+ ball:0 position: <-666.54, -666.54>           velocity: <11.7654, 11.7654> ft/sec
+
+
+Progress report at: 00:00:-87.0
+Nothing of Interest has happened
+ ball:0 position: <-678.31, -678.31>           velocity: <11.8831, 11.8831> ft/sec
+
+
+Progress report at: 00:00:-88.0
+Nothing of Interest has happened
+ ball:0 position: <-690.19, -690.19>           velocity: <12.0019, 12.0019> ft/sec
+
+
+Progress report at: 00:00:-89.0
+Nothing of Interest has happened
+ ball:0 position: <-702.19, -702.19>           velocity: <12.1219, 12.1219> ft/sec
+
+
+Progress report at: 00:00:-90.0
+Nothing of Interest has happened
+ ball:0 position: <-714.32, -714.32>           velocity: <12.2432, 12.2432> ft/sec
+
+
+Progress report at: 00:00:-91.0
+Nothing of Interest has happened
+ ball:0 position: <-726.56, -726.56>           velocity: <12.3656, 12.3656> ft/sec
+
+
+Progress report at: 00:00:-92.0
+Nothing of Interest has happened
+ ball:0 position: <-738.93, -738.93>           velocity: <12.4893, 12.4893> ft/sec
+
+
+Progress report at: 00:00:-93.0
+Nothing of Interest has happened
+ ball:0 position: <-751.41, -751.41>           velocity: <12.6141, 12.6141> ft/sec
+
+
+Progress report at: 00:00:-94.0
+Nothing of Interest has happened
+ ball:0 position: <-764.03, -764.03>           velocity: <12.7403, 12.7403> ft/sec
+
+
+Progress report at: 00:00:-95.0
+Nothing of Interest has happened
+ ball:0 position: <-776.77, -776.77>           velocity: <12.8677, 12.8677> ft/sec
+
+
+Progress report at: 00:00:-96.0
+Nothing of Interest has happened
+ ball:0 position: <-789.64, -789.64>           velocity: <12.9964, 12.9964> ft/sec
+
+
+Progress report at: 00:00:-97.0
+Nothing of Interest has happened
+ ball:0 position: <-802.63, -802.63>           velocity: <13.1263, 13.1263> ft/sec
+
+
+Progress report at: 00:00:-98.0
+Nothing of Interest has happened
+ ball:0 position: <-815.76, -815.76>           velocity: <13.2576, 13.2576> ft/sec
+
+
+Progress report at: 00:00:-99.0
+Nothing of Interest has happened
+ ball:0 position: <-829.02, -829.02>           velocity: <13.3902, 13.3902> ft/sec
+
+
+Progress report at: 00:00:-100.0
+Nothing of Interest has happened
+ ball:0 position: <-842.41, -842.41>           velocity: <13.5241, 13.5241> ft/sec
+
+
+Progress report at: 00:00:-101.0
+Nothing of Interest has happened
+ ball:0 position: <-855.93, -855.93>           velocity: <13.6593, 13.6593> ft/sec
+
+
+Progress report at: 00:00:-102.0
+Nothing of Interest has happened
+ ball:0 position: <-869.59, -869.59>           velocity: <13.7959, 13.7959> ft/sec
+
+
+Progress report at: 00:00:-103.0
+Nothing of Interest has happened
+ ball:0 position: <-883.39, -883.39>           velocity: <13.9339, 13.9339> ft/sec
+
+
+Progress report at: 00:00:-104.0
+Nothing of Interest has happened
+ ball:0 position: <-897.32, -897.32>           velocity: <14.0732, 14.0732> ft/sec
+
+
+Progress report at: 00:00:-105.0
+Nothing of Interest has happened
+ ball:0 position: <-911.39, -911.39>           velocity: <14.2139, 14.2139> ft/sec
+
+
+Progress report at: 00:00:-106.0
+Nothing of Interest has happened
+ ball:0 position: <-925.61, -925.61>           velocity: <14.3561, 14.3561> ft/sec
+
+
+Progress report at: 00:00:-107.0
+Nothing of Interest has happened
+ ball:0 position: <-939.96, -939.96>           velocity: <14.4996, 14.4996> ft/sec
+
+
+Progress report at: 00:00:-108.0
+Nothing of Interest has happened
+ ball:0 position: <-954.46, -954.46>           velocity: <14.6446, 14.6446> ft/sec
+
+
+Progress report at: 00:00:-109.0
+Nothing of Interest has happened
+ ball:0 position: <-969.11, -969.11>           velocity: <14.7911, 14.7911> ft/sec
+
+
+Progress report at: 00:00:-110.0
+Nothing of Interest has happened
+ ball:0 position: <-983.90, -983.90>           velocity: <14.9390, 14.9390> ft/sec
+
+
+Progress report at: 00:00:-111.0
+Nothing of Interest has happened
+ ball:0 position: <-998.84, -998.84>           velocity: <15.0884, 15.0884> ft/sec
+
+
+Progress report at: 00:00:-112.0
+It Seems I have fallen off the field!
+ ball:0 position: <-1013.93, -1013.93>           velocity: <15.2393, 15.2393> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim time slice too large...
+======================================
+
+The pole is at <604.66, 298.53>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 1800.1 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <10.00, 10.00>           velocity: <5.0000, 5.0000> ft/sec
+
+
+Progress report at: 00:30:00.1
+It Seems I have fallen off the field!
+ ball:0 position: <9010.50, 9010.50>           velocity: <-85.0050, -85.0050> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim time slice value of zero...
+======================================
+
+Error! au contraire mon frère, use nonzero number! Are you trying to send me in an inifinite loop?
+.
+.
+======================================
+... Testing SoccerSim check for collision...
+======================================
+
+The pole is at <634.71, 366.63>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 1.0 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <10.00, 10.00>           velocity: <1.0000, 1.0000> ft/sec
+ ball:1 position: <20.00, 20.00>           velocity: <-1.0000, -1.0000> ft/sec
+
+
+Progress report at: 00:00:01.0
+Nothing of Interest has happened
+ ball:0 position: <11.00, 11.00>           velocity: <0.9900, 0.9900> ft/sec
+ ball:1 position: <19.00, 19.00>           velocity: <-0.9900, -0.9900> ft/sec
+
+
+Progress report at: 00:00:02.0
+Nothing of Interest has happened
+ ball:0 position: <11.99, 11.99>           velocity: <0.9801, 0.9801> ft/sec
+ ball:1 position: <18.01, 18.01>           velocity: <-0.9801, -0.9801> ft/sec
+
+
+Progress report at: 00:00:03.0
+Nothing of Interest has happened
+ ball:0 position: <12.97, 12.97>           velocity: <0.9703, 0.9703> ft/sec
+ ball:1 position: <17.03, 17.03>           velocity: <-0.9703, -0.9703> ft/sec
+
+
+Progress report at: 00:00:04.0
+Nothing of Interest has happened
+ ball:0 position: <13.94, 13.94>           velocity: <0.9606, 0.9606> ft/sec
+ ball:1 position: <16.06, 16.06>           velocity: <-0.9606, -0.9606> ft/sec
+
+
+Progress report at: 00:00:05.0
+It Seems I have crashed into a ball!
+ ball:0 position: <14.90, 14.90>           velocity: <0.9510, 0.9510> ft/sec
+ ball:1 position: <15.10, 15.10>           velocity: <-0.9510, -0.9510> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim valid ball should come to rest...
+======================================
+
+The pole is at <51.70, 110.01>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 1.0 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <10.00, 10.00>           velocity: <1.0000, 1.0000> ft/sec
+
+
+Progress report at: 00:00:01.0
+Nothing of Interest has happened
+ ball:0 position: <11.00, 11.00>           velocity: <0.9900, 0.9900> ft/sec
+
+
+Progress report at: 00:00:02.0
+Nothing of Interest has happened
+ ball:0 position: <11.99, 11.99>           velocity: <0.9801, 0.9801> ft/sec
+
+
+Progress report at: 00:00:03.0
+Nothing of Interest has happened
+ ball:0 position: <12.97, 12.97>           velocity: <0.9703, 0.9703> ft/sec
+
+
+Progress report at: 00:00:04.0
+Nothing of Interest has happened
+ ball:0 position: <13.94, 13.94>           velocity: <0.9606, 0.9606> ft/sec
+
+
+Progress report at: 00:00:05.0
+Nothing of Interest has happened
+ ball:0 position: <14.90, 14.90>           velocity: <0.9510, 0.9510> ft/sec
+
+
+Progress report at: 00:00:06.0
+Nothing of Interest has happened
+ ball:0 position: <15.85, 15.85>           velocity: <0.9415, 0.9415> ft/sec
+
+
+Progress report at: 00:00:07.0
+Nothing of Interest has happened
+ ball:0 position: <16.79, 16.79>           velocity: <0.9321, 0.9321> ft/sec
+
+
+Progress report at: 00:00:08.0
+Nothing of Interest has happened
+ ball:0 position: <17.73, 17.73>           velocity: <0.9227, 0.9227> ft/sec
+
+
+Progress report at: 00:00:09.0
+Nothing of Interest has happened
+ ball:0 position: <18.65, 18.65>           velocity: <0.9135, 0.9135> ft/sec
+
+
+Progress report at: 00:00:10.0
+Nothing of Interest has happened
+ ball:0 position: <19.56, 19.56>           velocity: <0.9044, 0.9044> ft/sec
+
+
+Progress report at: 00:00:11.0
+Nothing of Interest has happened
+ ball:0 position: <20.47, 20.47>           velocity: <0.8953, 0.8953> ft/sec
+
+
+Progress report at: 00:00:12.0
+Nothing of Interest has happened
+ ball:0 position: <21.36, 21.36>           velocity: <0.8864, 0.8864> ft/sec
+
+
+Progress report at: 00:00:13.0
+Nothing of Interest has happened
+ ball:0 position: <22.25, 22.25>           velocity: <0.8775, 0.8775> ft/sec
+
+
+Progress report at: 00:00:14.0
+Nothing of Interest has happened
+ ball:0 position: <23.13, 23.13>           velocity: <0.8687, 0.8687> ft/sec
+
+
+Progress report at: 00:00:15.0
+Nothing of Interest has happened
+ ball:0 position: <23.99, 23.99>           velocity: <0.8601, 0.8601> ft/sec
+
+
+Progress report at: 00:00:16.0
+Nothing of Interest has happened
+ ball:0 position: <24.85, 24.85>           velocity: <0.8515, 0.8515> ft/sec
+
+
+Progress report at: 00:00:17.0
+Nothing of Interest has happened
+ ball:0 position: <25.71, 25.71>           velocity: <0.8429, 0.8429> ft/sec
+
+
+Progress report at: 00:00:18.0
+Nothing of Interest has happened
+ ball:0 position: <26.55, 26.55>           velocity: <0.8345, 0.8345> ft/sec
+
+
+Progress report at: 00:00:19.0
+Nothing of Interest has happened
+ ball:0 position: <27.38, 27.38>           velocity: <0.8262, 0.8262> ft/sec
+
+
+Progress report at: 00:00:20.0
+Nothing of Interest has happened
+ ball:0 position: <28.21, 28.21>           velocity: <0.8179, 0.8179> ft/sec
+
+
+Progress report at: 00:00:21.0
+Nothing of Interest has happened
+ ball:0 position: <29.03, 29.03>           velocity: <0.8097, 0.8097> ft/sec
+
+
+Progress report at: 00:00:22.0
+Nothing of Interest has happened
+ ball:0 position: <29.84, 29.84>           velocity: <0.8016, 0.8016> ft/sec
+
+
+Progress report at: 00:00:23.0
+Nothing of Interest has happened
+ ball:0 position: <30.64, 30.64>           velocity: <0.7936, 0.7936> ft/sec
+
+
+Progress report at: 00:00:24.0
+Nothing of Interest has happened
+ ball:0 position: <31.43, 31.43>           velocity: <0.7857, 0.7857> ft/sec
+
+
+Progress report at: 00:00:25.0
+Nothing of Interest has happened
+ ball:0 position: <32.22, 32.22>           velocity: <0.7778, 0.7778> ft/sec
+
+
+Progress report at: 00:00:26.0
+Nothing of Interest has happened
+ ball:0 position: <33.00, 33.00>           velocity: <0.7700, 0.7700> ft/sec
+
+
+Progress report at: 00:00:27.0
+Nothing of Interest has happened
+ ball:0 position: <33.77, 33.77>           velocity: <0.7623, 0.7623> ft/sec
+
+
+Progress report at: 00:00:28.0
+Nothing of Interest has happened
+ ball:0 position: <34.53, 34.53>           velocity: <0.7547, 0.7547> ft/sec
+
+
+Progress report at: 00:00:29.0
+Nothing of Interest has happened
+ ball:0 position: <35.28, 35.28>           velocity: <0.7472, 0.7472> ft/sec
+
+
+Progress report at: 00:00:30.0
+Nothing of Interest has happened
+ ball:0 position: <36.03, 36.03>           velocity: <0.7397, 0.7397> ft/sec
+
+
+Progress report at: 00:00:31.0
+Nothing of Interest has happened
+ ball:0 position: <36.77, 36.77>           velocity: <0.7323, 0.7323> ft/sec
+
+
+Progress report at: 00:00:32.0
+Nothing of Interest has happened
+ ball:0 position: <37.50, 37.50>           velocity: <0.7250, 0.7250> ft/sec
+
+
+Progress report at: 00:00:33.0
+Nothing of Interest has happened
+ ball:0 position: <38.23, 38.23>           velocity: <0.7177, 0.7177> ft/sec
+
+
+Progress report at: 00:00:34.0
+Nothing of Interest has happened
+ ball:0 position: <38.94, 38.94>           velocity: <0.7106, 0.7106> ft/sec
+
+
+Progress report at: 00:00:35.0
+Nothing of Interest has happened
+ ball:0 position: <39.66, 39.66>           velocity: <0.7034, 0.7034> ft/sec
+
+
+Progress report at: 00:00:36.0
+Nothing of Interest has happened
+ ball:0 position: <40.36, 40.36>           velocity: <0.6964, 0.6964> ft/sec
+
+
+Progress report at: 00:00:37.0
+Nothing of Interest has happened
+ ball:0 position: <41.06, 41.06>           velocity: <0.6894, 0.6894> ft/sec
+
+
+Progress report at: 00:00:38.0
+Nothing of Interest has happened
+ ball:0 position: <41.74, 41.74>           velocity: <0.6826, 0.6826> ft/sec
+
+
+Progress report at: 00:00:39.0
+Nothing of Interest has happened
+ ball:0 position: <42.43, 42.43>           velocity: <0.6757, 0.6757> ft/sec
+
+
+Progress report at: 00:00:40.0
+Nothing of Interest has happened
+ ball:0 position: <43.10, 43.10>           velocity: <0.6690, 0.6690> ft/sec
+
+
+Progress report at: 00:00:41.0
+Nothing of Interest has happened
+ ball:0 position: <43.77, 43.77>           velocity: <0.6623, 0.6623> ft/sec
+
+
+Progress report at: 00:00:42.0
+Nothing of Interest has happened
+ ball:0 position: <44.43, 44.43>           velocity: <0.6557, 0.6557> ft/sec
+
+
+Progress report at: 00:00:43.0
+Nothing of Interest has happened
+ ball:0 position: <45.09, 45.09>           velocity: <0.6491, 0.6491> ft/sec
+
+
+Progress report at: 00:00:44.0
+Nothing of Interest has happened
+ ball:0 position: <45.74, 45.74>           velocity: <0.6426, 0.6426> ft/sec
+
+
+Progress report at: 00:00:45.0
+Nothing of Interest has happened
+ ball:0 position: <46.38, 46.38>           velocity: <0.6362, 0.6362> ft/sec
+
+
+Progress report at: 00:00:46.0
+Nothing of Interest has happened
+ ball:0 position: <47.02, 47.02>           velocity: <0.6298, 0.6298> ft/sec
+
+
+Progress report at: 00:00:47.0
+Nothing of Interest has happened
+ ball:0 position: <47.65, 47.65>           velocity: <0.6235, 0.6235> ft/sec
+
+
+Progress report at: 00:00:48.0
+Nothing of Interest has happened
+ ball:0 position: <48.27, 48.27>           velocity: <0.6173, 0.6173> ft/sec
+
+
+Progress report at: 00:00:49.0
+Nothing of Interest has happened
+ ball:0 position: <48.89, 48.89>           velocity: <0.6111, 0.6111> ft/sec
+
+
+Progress report at: 00:00:50.0
+Nothing of Interest has happened
+ ball:0 position: <49.50, 49.50>           velocity: <0.6050, 0.6050> ft/sec
+
+
+Progress report at: 00:00:51.0
+Nothing of Interest has happened
+ ball:0 position: <50.10, 50.10>           velocity: <0.5990, 0.5990> ft/sec
+
+
+Progress report at: 00:00:52.0
+Nothing of Interest has happened
+ ball:0 position: <50.70, 50.70>           velocity: <0.5930, 0.5930> ft/sec
+
+
+Progress report at: 00:00:53.0
+Nothing of Interest has happened
+ ball:0 position: <51.30, 51.30>           velocity: <0.5870, 0.5870> ft/sec
+
+
+Progress report at: 00:00:54.0
+Nothing of Interest has happened
+ ball:0 position: <51.88, 51.88>           velocity: <0.5812, 0.5812> ft/sec
+
+
+Progress report at: 00:00:55.0
+Nothing of Interest has happened
+ ball:0 position: <52.46, 52.46>           velocity: <0.5754, 0.5754> ft/sec
+
+
+Progress report at: 00:00:56.0
+Nothing of Interest has happened
+ ball:0 position: <53.04, 53.04>           velocity: <0.5696, 0.5696> ft/sec
+
+
+Progress report at: 00:00:57.0
+Nothing of Interest has happened
+ ball:0 position: <53.61, 53.61>           velocity: <0.5639, 0.5639> ft/sec
+
+
+Progress report at: 00:00:58.0
+Nothing of Interest has happened
+ ball:0 position: <54.17, 54.17>           velocity: <0.5583, 0.5583> ft/sec
+
+
+Progress report at: 00:00:59.0
+Nothing of Interest has happened
+ ball:0 position: <54.73, 54.73>           velocity: <0.5527, 0.5527> ft/sec
+
+
+Progress report at: 00:00:60.0
+Nothing of Interest has happened
+ ball:0 position: <55.28, 55.28>           velocity: <0.5472, 0.5472> ft/sec
+
+
+Progress report at: 00:01:01.0
+Nothing of Interest has happened
+ ball:0 position: <55.83, 55.83>           velocity: <0.5417, 0.5417> ft/sec
+
+
+Progress report at: 00:01:02.0
+Nothing of Interest has happened
+ ball:0 position: <56.37, 56.37>           velocity: <0.5363, 0.5363> ft/sec
+
+
+Progress report at: 00:01:03.0
+Nothing of Interest has happened
+ ball:0 position: <56.91, 56.91>           velocity: <0.5309, 0.5309> ft/sec
+
+
+Progress report at: 00:01:04.0
+Nothing of Interest has happened
+ ball:0 position: <57.44, 57.44>           velocity: <0.5256, 0.5256> ft/sec
+
+
+Progress report at: 00:01:05.0
+Nothing of Interest has happened
+ ball:0 position: <57.97, 57.97>           velocity: <0.5203, 0.5203> ft/sec
+
+
+Progress report at: 00:01:06.0
+Nothing of Interest has happened
+ ball:0 position: <58.49, 58.49>           velocity: <0.5151, 0.5151> ft/sec
+
+
+Progress report at: 00:01:07.0
+Nothing of Interest has happened
+ ball:0 position: <59.00, 59.00>           velocity: <0.5100, 0.5100> ft/sec
+
+
+Progress report at: 00:01:08.0
+Nothing of Interest has happened
+ ball:0 position: <59.51, 59.51>           velocity: <0.5049, 0.5049> ft/sec
+
+
+Progress report at: 00:01:09.0
+Nothing of Interest has happened
+ ball:0 position: <60.02, 60.02>           velocity: <0.4998, 0.4998> ft/sec
+
+
+Progress report at: 00:01:10.0
+Nothing of Interest has happened
+ ball:0 position: <60.52, 60.52>           velocity: <0.4948, 0.4948> ft/sec
+
+
+Progress report at: 00:01:11.0
+Nothing of Interest has happened
+ ball:0 position: <61.01, 61.01>           velocity: <0.4899, 0.4899> ft/sec
+
+
+Progress report at: 00:01:12.0
+Nothing of Interest has happened
+ ball:0 position: <61.50, 61.50>           velocity: <0.4850, 0.4850> ft/sec
+
+
+Progress report at: 00:01:13.0
+Nothing of Interest has happened
+ ball:0 position: <61.99, 61.99>           velocity: <0.4801, 0.4801> ft/sec
+
+
+Progress report at: 00:01:14.0
+Nothing of Interest has happened
+ ball:0 position: <62.47, 62.47>           velocity: <0.4753, 0.4753> ft/sec
+
+
+Progress report at: 00:01:15.0
+Nothing of Interest has happened
+ ball:0 position: <62.94, 62.94>           velocity: <0.4706, 0.4706> ft/sec
+
+
+Progress report at: 00:01:16.0
+Nothing of Interest has happened
+ ball:0 position: <63.41, 63.41>           velocity: <0.4659, 0.4659> ft/sec
+
+
+Progress report at: 00:01:17.0
+Nothing of Interest has happened
+ ball:0 position: <63.88, 63.88>           velocity: <0.4612, 0.4612> ft/sec
+
+
+Progress report at: 00:01:18.0
+Nothing of Interest has happened
+ ball:0 position: <64.34, 64.34>           velocity: <0.4566, 0.4566> ft/sec
+
+
+Progress report at: 00:01:19.0
+Nothing of Interest has happened
+ ball:0 position: <64.80, 64.80>           velocity: <0.4520, 0.4520> ft/sec
+
+
+Progress report at: 00:01:20.0
+Nothing of Interest has happened
+ ball:0 position: <65.25, 65.25>           velocity: <0.4475, 0.4475> ft/sec
+
+
+Progress report at: 00:01:21.0
+Nothing of Interest has happened
+ ball:0 position: <65.70, 65.70>           velocity: <0.4430, 0.4430> ft/sec
+
+
+Progress report at: 00:01:22.0
+Nothing of Interest has happened
+ ball:0 position: <66.14, 66.14>           velocity: <0.4386, 0.4386> ft/sec
+
+
+Progress report at: 00:01:23.0
+Nothing of Interest has happened
+ ball:0 position: <66.58, 66.58>           velocity: <0.4342, 0.4342> ft/sec
+
+
+Progress report at: 00:01:24.0
+Nothing of Interest has happened
+ ball:0 position: <67.01, 67.01>           velocity: <0.4299, 0.4299> ft/sec
+
+
+Progress report at: 00:01:25.0
+Nothing of Interest has happened
+ ball:0 position: <67.44, 67.44>           velocity: <0.4256, 0.4256> ft/sec
+
+
+Progress report at: 00:01:26.0
+Nothing of Interest has happened
+ ball:0 position: <67.87, 67.87>           velocity: <0.4213, 0.4213> ft/sec
+
+
+Progress report at: 00:01:27.0
+Nothing of Interest has happened
+ ball:0 position: <68.29, 68.29>           velocity: <0.4171, 0.4171> ft/sec
+
+
+Progress report at: 00:01:28.0
+Nothing of Interest has happened
+ ball:0 position: <68.71, 68.71>           velocity: <0.4129, 0.4129> ft/sec
+
+
+Progress report at: 00:01:29.0
+Nothing of Interest has happened
+ ball:0 position: <69.12, 69.12>           velocity: <0.4088, 0.4088> ft/sec
+
+
+Progress report at: 00:01:30.0
+Nothing of Interest has happened
+ ball:0 position: <69.53, 69.53>           velocity: <0.4047, 0.4047> ft/sec
+
+
+Progress report at: 00:01:31.0
+Nothing of Interest has happened
+ ball:0 position: <69.93, 69.93>           velocity: <0.4007, 0.4007> ft/sec
+
+
+Progress report at: 00:01:32.0
+Nothing of Interest has happened
+ ball:0 position: <70.33, 70.33>           velocity: <0.3967, 0.3967> ft/sec
+
+
+Progress report at: 00:01:33.0
+Nothing of Interest has happened
+ ball:0 position: <70.73, 70.73>           velocity: <0.3927, 0.3927> ft/sec
+
+
+Progress report at: 00:01:34.0
+Nothing of Interest has happened
+ ball:0 position: <71.12, 71.12>           velocity: <0.3888, 0.3888> ft/sec
+
+
+Progress report at: 00:01:35.0
+Nothing of Interest has happened
+ ball:0 position: <71.51, 71.51>           velocity: <0.3849, 0.3849> ft/sec
+
+
+Progress report at: 00:01:36.0
+Nothing of Interest has happened
+ ball:0 position: <71.90, 71.90>           velocity: <0.3810, 0.3810> ft/sec
+
+
+Progress report at: 00:01:37.0
+Nothing of Interest has happened
+ ball:0 position: <72.28, 72.28>           velocity: <0.3772, 0.3772> ft/sec
+
+
+Progress report at: 00:01:38.0
+Nothing of Interest has happened
+ ball:0 position: <72.65, 72.65>           velocity: <0.3735, 0.3735> ft/sec
+
+
+Progress report at: 00:01:39.0
+Nothing of Interest has happened
+ ball:0 position: <73.03, 73.03>           velocity: <0.3697, 0.3697> ft/sec
+
+
+Progress report at: 00:01:40.0
+Nothing of Interest has happened
+ ball:0 position: <73.40, 73.40>           velocity: <0.3660, 0.3660> ft/sec
+
+
+Progress report at: 00:01:41.0
+Nothing of Interest has happened
+ ball:0 position: <73.76, 73.76>           velocity: <0.3624, 0.3624> ft/sec
+
+
+Progress report at: 00:01:42.0
+Nothing of Interest has happened
+ ball:0 position: <74.13, 74.13>           velocity: <0.3587, 0.3587> ft/sec
+
+
+Progress report at: 00:01:43.0
+Nothing of Interest has happened
+ ball:0 position: <74.48, 74.48>           velocity: <0.3552, 0.3552> ft/sec
+
+
+Progress report at: 00:01:44.0
+Nothing of Interest has happened
+ ball:0 position: <74.84, 74.84>           velocity: <0.3516, 0.3516> ft/sec
+
+
+Progress report at: 00:01:45.0
+Nothing of Interest has happened
+ ball:0 position: <75.19, 75.19>           velocity: <0.3481, 0.3481> ft/sec
+
+
+Progress report at: 00:01:46.0
+Nothing of Interest has happened
+ ball:0 position: <75.54, 75.54>           velocity: <0.3446, 0.3446> ft/sec
+
+
+Progress report at: 00:01:47.0
+Nothing of Interest has happened
+ ball:0 position: <75.88, 75.88>           velocity: <0.3412, 0.3412> ft/sec
+
+
+Progress report at: 00:01:48.0
+Nothing of Interest has happened
+ ball:0 position: <76.22, 76.22>           velocity: <0.3378, 0.3378> ft/sec
+
+
+Progress report at: 00:01:49.0
+Nothing of Interest has happened
+ ball:0 position: <76.56, 76.56>           velocity: <0.3344, 0.3344> ft/sec
+
+
+Progress report at: 00:01:50.0
+Nothing of Interest has happened
+ ball:0 position: <76.90, 76.90>           velocity: <0.3310, 0.3310> ft/sec
+
+
+Progress report at: 00:01:51.0
+Nothing of Interest has happened
+ ball:0 position: <77.23, 77.23>           velocity: <0.3277, 0.3277> ft/sec
+
+
+Progress report at: 00:01:52.0
+Nothing of Interest has happened
+ ball:0 position: <77.56, 77.56>           velocity: <0.3244, 0.3244> ft/sec
+
+
+Progress report at: 00:01:53.0
+Nothing of Interest has happened
+ ball:0 position: <77.88, 77.88>           velocity: <0.3212, 0.3212> ft/sec
+
+
+Progress report at: 00:01:54.0
+Nothing of Interest has happened
+ ball:0 position: <78.20, 78.20>           velocity: <0.3180, 0.3180> ft/sec
+
+
+Progress report at: 00:01:55.0
+Nothing of Interest has happened
+ ball:0 position: <78.52, 78.52>           velocity: <0.3148, 0.3148> ft/sec
+
+
+Progress report at: 00:01:56.0
+Nothing of Interest has happened
+ ball:0 position: <78.83, 78.83>           velocity: <0.3117, 0.3117> ft/sec
+
+
+Progress report at: 00:01:57.0
+Nothing of Interest has happened
+ ball:0 position: <79.15, 79.15>           velocity: <0.3085, 0.3085> ft/sec
+
+
+Progress report at: 00:01:58.0
+Nothing of Interest has happened
+ ball:0 position: <79.45, 79.45>           velocity: <0.3055, 0.3055> ft/sec
+
+
+Progress report at: 00:01:59.0
+Nothing of Interest has happened
+ ball:0 position: <79.76, 79.76>           velocity: <0.3024, 0.3024> ft/sec
+
+
+Progress report at: 00:02:00.0
+Nothing of Interest has happened
+ ball:0 position: <80.06, 80.06>           velocity: <0.2994, 0.2994> ft/sec
+
+
+Progress report at: 00:02:01.0
+Nothing of Interest has happened
+ ball:0 position: <80.36, 80.36>           velocity: <0.2964, 0.2964> ft/sec
+
+
+Progress report at: 00:02:02.0
+Nothing of Interest has happened
+ ball:0 position: <80.66, 80.66>           velocity: <0.2934, 0.2934> ft/sec
+
+
+Progress report at: 00:02:03.0
+Nothing of Interest has happened
+ ball:0 position: <80.95, 80.95>           velocity: <0.2905, 0.2905> ft/sec
+
+
+Progress report at: 00:02:04.0
+Nothing of Interest has happened
+ ball:0 position: <81.24, 81.24>           velocity: <0.2876, 0.2876> ft/sec
+
+
+Progress report at: 00:02:05.0
+Nothing of Interest has happened
+ ball:0 position: <81.53, 81.53>           velocity: <0.2847, 0.2847> ft/sec
+
+
+Progress report at: 00:02:06.0
+Nothing of Interest has happened
+ ball:0 position: <81.81, 81.81>           velocity: <0.2819, 0.2819> ft/sec
+
+
+Progress report at: 00:02:07.0
+Nothing of Interest has happened
+ ball:0 position: <82.10, 82.10>           velocity: <0.2790, 0.2790> ft/sec
+
+
+Progress report at: 00:02:08.0
+Nothing of Interest has happened
+ ball:0 position: <82.37, 82.37>           velocity: <0.2763, 0.2763> ft/sec
+
+
+Progress report at: 00:02:09.0
+Nothing of Interest has happened
+ ball:0 position: <82.65, 82.65>           velocity: <0.2735, 0.2735> ft/sec
+
+
+Progress report at: 00:02:10.0
+Nothing of Interest has happened
+ ball:0 position: <82.92, 82.92>           velocity: <0.2708, 0.2708> ft/sec
+
+
+Progress report at: 00:02:11.0
+Nothing of Interest has happened
+ ball:0 position: <83.20, 83.20>           velocity: <0.2680, 0.2680> ft/sec
+
+
+Progress report at: 00:02:12.0
+Nothing of Interest has happened
+ ball:0 position: <83.46, 83.46>           velocity: <0.2654, 0.2654> ft/sec
+
+
+Progress report at: 00:02:13.0
+Nothing of Interest has happened
+ ball:0 position: <83.73, 83.73>           velocity: <0.2627, 0.2627> ft/sec
+
+
+Progress report at: 00:02:14.0
+Nothing of Interest has happened
+ ball:0 position: <83.99, 83.99>           velocity: <0.2601, 0.2601> ft/sec
+
+
+Progress report at: 00:02:15.0
+Nothing of Interest has happened
+ ball:0 position: <84.25, 84.25>           velocity: <0.2575, 0.2575> ft/sec
+
+
+Progress report at: 00:02:16.0
+Nothing of Interest has happened
+ ball:0 position: <84.51, 84.51>           velocity: <0.2549, 0.2549> ft/sec
+
+
+Progress report at: 00:02:17.0
+Nothing of Interest has happened
+ ball:0 position: <84.76, 84.76>           velocity: <0.2524, 0.2524> ft/sec
+
+
+Progress report at: 00:02:18.0
+Nothing of Interest has happened
+ ball:0 position: <85.02, 85.02>           velocity: <0.2498, 0.2498> ft/sec
+
+
+Progress report at: 00:02:19.0
+Nothing of Interest has happened
+ ball:0 position: <85.27, 85.27>           velocity: <0.2473, 0.2473> ft/sec
+
+
+Progress report at: 00:02:20.0
+Nothing of Interest has happened
+ ball:0 position: <85.51, 85.51>           velocity: <0.2449, 0.2449> ft/sec
+
+
+Progress report at: 00:02:21.0
+Nothing of Interest has happened
+ ball:0 position: <85.76, 85.76>           velocity: <0.2424, 0.2424> ft/sec
+
+
+Progress report at: 00:02:22.0
+Nothing of Interest has happened
+ ball:0 position: <86.00, 86.00>           velocity: <0.2400, 0.2400> ft/sec
+
+
+Progress report at: 00:02:23.0
+Nothing of Interest has happened
+ ball:0 position: <86.24, 86.24>           velocity: <0.2376, 0.2376> ft/sec
+
+
+Progress report at: 00:02:24.0
+Nothing of Interest has happened
+ ball:0 position: <86.48, 86.48>           velocity: <0.2352, 0.2352> ft/sec
+
+
+Progress report at: 00:02:25.0
+Nothing of Interest has happened
+ ball:0 position: <86.71, 86.71>           velocity: <0.2329, 0.2329> ft/sec
+
+
+Progress report at: 00:02:26.0
+Nothing of Interest has happened
+ ball:0 position: <86.95, 86.95>           velocity: <0.2305, 0.2305> ft/sec
+
+
+Progress report at: 00:02:27.0
+Nothing of Interest has happened
+ ball:0 position: <87.18, 87.18>           velocity: <0.2282, 0.2282> ft/sec
+
+
+Progress report at: 00:02:28.0
+Nothing of Interest has happened
+ ball:0 position: <87.41, 87.41>           velocity: <0.2259, 0.2259> ft/sec
+
+
+Progress report at: 00:02:29.0
+Nothing of Interest has happened
+ ball:0 position: <87.63, 87.63>           velocity: <0.2237, 0.2237> ft/sec
+
+
+Progress report at: 00:02:30.0
+Nothing of Interest has happened
+ ball:0 position: <87.85, 87.85>           velocity: <0.2215, 0.2215> ft/sec
+
+
+Progress report at: 00:02:31.0
+Nothing of Interest has happened
+ ball:0 position: <88.08, 88.08>           velocity: <0.2192, 0.2192> ft/sec
+
+
+Progress report at: 00:02:32.0
+Nothing of Interest has happened
+ ball:0 position: <88.30, 88.30>           velocity: <0.2170, 0.2170> ft/sec
+
+
+Progress report at: 00:02:33.0
+Nothing of Interest has happened
+ ball:0 position: <88.51, 88.51>           velocity: <0.2149, 0.2149> ft/sec
+
+
+Progress report at: 00:02:34.0
+Nothing of Interest has happened
+ ball:0 position: <88.73, 88.73>           velocity: <0.2127, 0.2127> ft/sec
+
+
+Progress report at: 00:02:35.0
+Nothing of Interest has happened
+ ball:0 position: <88.94, 88.94>           velocity: <0.2106, 0.2106> ft/sec
+
+
+Progress report at: 00:02:36.0
+Nothing of Interest has happened
+ ball:0 position: <89.15, 89.15>           velocity: <0.2085, 0.2085> ft/sec
+
+
+Progress report at: 00:02:37.0
+Nothing of Interest has happened
+ ball:0 position: <89.36, 89.36>           velocity: <0.2064, 0.2064> ft/sec
+
+
+Progress report at: 00:02:38.0
+Nothing of Interest has happened
+ ball:0 position: <89.57, 89.57>           velocity: <0.2043, 0.2043> ft/sec
+
+
+Progress report at: 00:02:39.0
+Nothing of Interest has happened
+ ball:0 position: <89.77, 89.77>           velocity: <0.2023, 0.2023> ft/sec
+
+
+Progress report at: 00:02:40.0
+Nothing of Interest has happened
+ ball:0 position: <89.97, 89.97>           velocity: <0.2003, 0.2003> ft/sec
+
+
+Progress report at: 00:02:41.0
+Nothing of Interest has happened
+ ball:0 position: <90.17, 90.17>           velocity: <0.1983, 0.1983> ft/sec
+
+
+Progress report at: 00:02:42.0
+Nothing of Interest has happened
+ ball:0 position: <90.37, 90.37>           velocity: <0.1963, 0.1963> ft/sec
+
+
+Progress report at: 00:02:43.0
+Nothing of Interest has happened
+ ball:0 position: <90.57, 90.57>           velocity: <0.1943, 0.1943> ft/sec
+
+
+Progress report at: 00:02:44.0
+Nothing of Interest has happened
+ ball:0 position: <90.76, 90.76>           velocity: <0.1924, 0.1924> ft/sec
+
+
+Progress report at: 00:02:45.0
+Nothing of Interest has happened
+ ball:0 position: <90.95, 90.95>           velocity: <0.1905, 0.1905> ft/sec
+
+
+Progress report at: 00:02:46.0
+Nothing of Interest has happened
+ ball:0 position: <91.14, 91.14>           velocity: <0.1886, 0.1886> ft/sec
+
+
+Progress report at: 00:02:47.0
+Nothing of Interest has happened
+ ball:0 position: <91.33, 91.33>           velocity: <0.1867, 0.1867> ft/sec
+
+
+Progress report at: 00:02:48.0
+Nothing of Interest has happened
+ ball:0 position: <91.52, 91.52>           velocity: <0.1848, 0.1848> ft/sec
+
+
+Progress report at: 00:02:49.0
+Nothing of Interest has happened
+ ball:0 position: <91.70, 91.70>           velocity: <0.1830, 0.1830> ft/sec
+
+
+Progress report at: 00:02:50.0
+Nothing of Interest has happened
+ ball:0 position: <91.89, 91.89>           velocity: <0.1811, 0.1811> ft/sec
+
+
+Progress report at: 00:02:51.0
+Nothing of Interest has happened
+ ball:0 position: <92.07, 92.07>           velocity: <0.1793, 0.1793> ft/sec
+
+
+Progress report at: 00:02:52.0
+Nothing of Interest has happened
+ ball:0 position: <92.25, 92.25>           velocity: <0.1775, 0.1775> ft/sec
+
+
+Progress report at: 00:02:53.0
+Nothing of Interest has happened
+ ball:0 position: <92.43, 92.43>           velocity: <0.1757, 0.1757> ft/sec
+
+
+Progress report at: 00:02:54.0
+Nothing of Interest has happened
+ ball:0 position: <92.60, 92.60>           velocity: <0.1740, 0.1740> ft/sec
+
+
+Progress report at: 00:02:55.0
+Nothing of Interest has happened
+ ball:0 position: <92.78, 92.78>           velocity: <0.1722, 0.1722> ft/sec
+
+
+Progress report at: 00:02:56.0
+Nothing of Interest has happened
+ ball:0 position: <92.95, 92.95>           velocity: <0.1705, 0.1705> ft/sec
+
+
+Progress report at: 00:02:57.0
+Nothing of Interest has happened
+ ball:0 position: <93.12, 93.12>           velocity: <0.1688, 0.1688> ft/sec
+
+
+Progress report at: 00:02:58.0
+Nothing of Interest has happened
+ ball:0 position: <93.29, 93.29>           velocity: <0.1671, 0.1671> ft/sec
+
+
+Progress report at: 00:02:59.0
+Nothing of Interest has happened
+ ball:0 position: <93.45, 93.45>           velocity: <0.1655, 0.1655> ft/sec
+
+
+Progress report at: 00:03:00.0
+Nothing of Interest has happened
+ ball:0 position: <93.62, 93.62>           velocity: <0.1638, 0.1638> ft/sec
+
+
+Progress report at: 00:03:01.0
+Nothing of Interest has happened
+ ball:0 position: <93.78, 93.78>           velocity: <0.1622, 0.1622> ft/sec
+
+
+Progress report at: 00:03:02.0
+Nothing of Interest has happened
+ ball:0 position: <93.95, 93.95>           velocity: <0.1605, 0.1605> ft/sec
+
+
+Progress report at: 00:03:03.0
+Nothing of Interest has happened
+ ball:0 position: <94.11, 94.11>           velocity: <0.1589, 0.1589> ft/sec
+
+
+Progress report at: 00:03:04.0
+Nothing of Interest has happened
+ ball:0 position: <94.26, 94.26>           velocity: <0.1574, 0.1574> ft/sec
+
+
+Progress report at: 00:03:05.0
+Nothing of Interest has happened
+ ball:0 position: <94.42, 94.42>           velocity: <0.1558, 0.1558> ft/sec
+
+
+Progress report at: 00:03:06.0
+Nothing of Interest has happened
+ ball:0 position: <94.58, 94.58>           velocity: <0.1542, 0.1542> ft/sec
+
+
+Progress report at: 00:03:07.0
+Nothing of Interest has happened
+ ball:0 position: <94.73, 94.73>           velocity: <0.1527, 0.1527> ft/sec
+
+
+Progress report at: 00:03:08.0
+Nothing of Interest has happened
+ ball:0 position: <94.88, 94.88>           velocity: <0.1512, 0.1512> ft/sec
+
+
+Progress report at: 00:03:09.0
+Nothing of Interest has happened
+ ball:0 position: <95.04, 95.04>           velocity: <0.1496, 0.1496> ft/sec
+
+
+Progress report at: 00:03:10.0
+Nothing of Interest has happened
+ ball:0 position: <95.19, 95.19>           velocity: <0.1481, 0.1481> ft/sec
+
+
+Progress report at: 00:03:11.0
+Nothing of Interest has happened
+ ball:0 position: <95.33, 95.33>           velocity: <0.1467, 0.1467> ft/sec
+
+
+Progress report at: 00:03:12.0
+Nothing of Interest has happened
+ ball:0 position: <95.48, 95.48>           velocity: <0.1452, 0.1452> ft/sec
+
+
+Progress report at: 00:03:13.0
+Nothing of Interest has happened
+ ball:0 position: <95.63, 95.63>           velocity: <0.1437, 0.1437> ft/sec
+
+
+Progress report at: 00:03:14.0
+Nothing of Interest has happened
+ ball:0 position: <95.77, 95.77>           velocity: <0.1423, 0.1423> ft/sec
+
+
+Progress report at: 00:03:15.0
+Nothing of Interest has happened
+ ball:0 position: <95.91, 95.91>           velocity: <0.1409, 0.1409> ft/sec
+
+
+Progress report at: 00:03:16.0
+Nothing of Interest has happened
+ ball:0 position: <96.05, 96.05>           velocity: <0.1395, 0.1395> ft/sec
+
+
+Progress report at: 00:03:17.0
+Nothing of Interest has happened
+ ball:0 position: <96.19, 96.19>           velocity: <0.1381, 0.1381> ft/sec
+
+
+Progress report at: 00:03:18.0
+Nothing of Interest has happened
+ ball:0 position: <96.33, 96.33>           velocity: <0.1367, 0.1367> ft/sec
+
+
+Progress report at: 00:03:19.0
+Nothing of Interest has happened
+ ball:0 position: <96.47, 96.47>           velocity: <0.1353, 0.1353> ft/sec
+
+
+Progress report at: 00:03:20.0
+Nothing of Interest has happened
+ ball:0 position: <96.60, 96.60>           velocity: <0.1340, 0.1340> ft/sec
+
+
+Progress report at: 00:03:21.0
+Nothing of Interest has happened
+ ball:0 position: <96.74, 96.74>           velocity: <0.1326, 0.1326> ft/sec
+
+
+Progress report at: 00:03:22.0
+Nothing of Interest has happened
+ ball:0 position: <96.87, 96.87>           velocity: <0.1313, 0.1313> ft/sec
+
+
+Progress report at: 00:03:23.0
+Nothing of Interest has happened
+ ball:0 position: <97.00, 97.00>           velocity: <0.1300, 0.1300> ft/sec
+
+
+Progress report at: 00:03:24.0
+Nothing of Interest has happened
+ ball:0 position: <97.13, 97.13>           velocity: <0.1287, 0.1287> ft/sec
+
+
+Progress report at: 00:03:25.0
+Nothing of Interest has happened
+ ball:0 position: <97.26, 97.26>           velocity: <0.1274, 0.1274> ft/sec
+
+
+Progress report at: 00:03:26.0
+Nothing of Interest has happened
+ ball:0 position: <97.39, 97.39>           velocity: <0.1261, 0.1261> ft/sec
+
+
+Progress report at: 00:03:27.0
+Nothing of Interest has happened
+ ball:0 position: <97.51, 97.51>           velocity: <0.1249, 0.1249> ft/sec
+
+
+Progress report at: 00:03:28.0
+Nothing of Interest has happened
+ ball:0 position: <97.64, 97.64>           velocity: <0.1236, 0.1236> ft/sec
+
+
+Progress report at: 00:03:29.0
+Nothing of Interest has happened
+ ball:0 position: <97.76, 97.76>           velocity: <0.1224, 0.1224> ft/sec
+
+
+Progress report at: 00:03:30.0
+Nothing of Interest has happened
+ ball:0 position: <97.88, 97.88>           velocity: <0.1212, 0.1212> ft/sec
+
+
+Progress report at: 00:03:31.0
+Nothing of Interest has happened
+ ball:0 position: <98.00, 98.00>           velocity: <0.1200, 0.1200> ft/sec
+
+
+Progress report at: 00:03:32.0
+Nothing of Interest has happened
+ ball:0 position: <98.12, 98.12>           velocity: <0.1188, 0.1188> ft/sec
+
+
+Progress report at: 00:03:33.0
+Nothing of Interest has happened
+ ball:0 position: <98.24, 98.24>           velocity: <0.1176, 0.1176> ft/sec
+
+
+Progress report at: 00:03:34.0
+Nothing of Interest has happened
+ ball:0 position: <98.36, 98.36>           velocity: <0.1164, 0.1164> ft/sec
+
+
+Progress report at: 00:03:35.0
+Nothing of Interest has happened
+ ball:0 position: <98.48, 98.48>           velocity: <0.1152, 0.1152> ft/sec
+
+
+Progress report at: 00:03:36.0
+Nothing of Interest has happened
+ ball:0 position: <98.59, 98.59>           velocity: <0.1141, 0.1141> ft/sec
+
+
+Progress report at: 00:03:37.0
+Nothing of Interest has happened
+ ball:0 position: <98.71, 98.71>           velocity: <0.1129, 0.1129> ft/sec
+
+
+Progress report at: 00:03:38.0
+Nothing of Interest has happened
+ ball:0 position: <98.82, 98.82>           velocity: <0.1118, 0.1118> ft/sec
+
+
+Progress report at: 00:03:39.0
+Nothing of Interest has happened
+ ball:0 position: <98.93, 98.93>           velocity: <0.1107, 0.1107> ft/sec
+
+
+Progress report at: 00:03:40.0
+Nothing of Interest has happened
+ ball:0 position: <99.04, 99.04>           velocity: <0.1096, 0.1096> ft/sec
+
+
+Progress report at: 00:03:41.0
+Nothing of Interest has happened
+ ball:0 position: <99.15, 99.15>           velocity: <0.1085, 0.1085> ft/sec
+
+
+Progress report at: 00:03:42.0
+Nothing of Interest has happened
+ ball:0 position: <99.26, 99.26>           velocity: <0.1074, 0.1074> ft/sec
+
+
+Progress report at: 00:03:43.0
+Nothing of Interest has happened
+ ball:0 position: <99.37, 99.37>           velocity: <0.1063, 0.1063> ft/sec
+
+
+Progress report at: 00:03:44.0
+Nothing of Interest has happened
+ ball:0 position: <99.47, 99.47>           velocity: <0.1053, 0.1053> ft/sec
+
+
+Progress report at: 00:03:45.0
+Nothing of Interest has happened
+ ball:0 position: <99.58, 99.58>           velocity: <0.1042, 0.1042> ft/sec
+
+
+Progress report at: 00:03:46.0
+Nothing of Interest has happened
+ ball:0 position: <99.68, 99.68>           velocity: <0.1032, 0.1032> ft/sec
+
+
+Progress report at: 00:03:47.0
+Nothing of Interest has happened
+ ball:0 position: <99.79, 99.79>           velocity: <0.1021, 0.1021> ft/sec
+
+
+Progress report at: 00:03:48.0
+Nothing of Interest has happened
+ ball:0 position: <99.89, 99.89>           velocity: <0.1011, 0.1011> ft/sec
+
+
+Progress report at: 00:03:49.0
+Nothing of Interest has happened
+ ball:0 position: <99.99, 99.99>           velocity: <0.1001, 0.1001> ft/sec
+
+
+Progress report at: 00:03:50.0
+Nothing of Interest has happened
+ ball:0 position: <100.09, 100.09>           velocity: <0.0991, 0.0991> ft/sec
+
+
+Progress report at: 00:03:51.0
+Nothing of Interest has happened
+ ball:0 position: <100.19, 100.19>           velocity: <0.0981, 0.0981> ft/sec
+
+
+Progress report at: 00:03:52.0
+Nothing of Interest has happened
+ ball:0 position: <100.29, 100.29>           velocity: <0.0971, 0.0971> ft/sec
+
+
+Progress report at: 00:03:53.0
+Nothing of Interest has happened
+ ball:0 position: <100.38, 100.38>           velocity: <0.0962, 0.0962> ft/sec
+
+
+Progress report at: 00:03:54.0
+Nothing of Interest has happened
+ ball:0 position: <100.48, 100.48>           velocity: <0.0952, 0.0952> ft/sec
+
+
+Progress report at: 00:03:55.0
+Nothing of Interest has happened
+ ball:0 position: <100.58, 100.58>           velocity: <0.0942, 0.0942> ft/sec
+
+
+Progress report at: 00:03:56.0
+Nothing of Interest has happened
+ ball:0 position: <100.67, 100.67>           velocity: <0.0933, 0.0933> ft/sec
+
+
+Progress report at: 00:03:57.0
+Nothing of Interest has happened
+ ball:0 position: <100.76, 100.76>           velocity: <0.0924, 0.0924> ft/sec
+
+
+Progress report at: 00:03:58.0
+Nothing of Interest has happened
+ ball:0 position: <100.86, 100.86>           velocity: <0.0914, 0.0914> ft/sec
+
+
+Progress report at: 00:03:59.0
+Nothing of Interest has happened
+ ball:0 position: <100.95, 100.95>           velocity: <0.0905, 0.0905> ft/sec
+
+
+Progress report at: 00:04:00.0
+Nothing of Interest has happened
+ ball:0 position: <101.04, 101.04>           velocity: <0.0896, 0.0896> ft/sec
+
+
+Progress report at: 00:04:01.0
+Nothing of Interest has happened
+ ball:0 position: <101.13, 101.13>           velocity: <0.0887, 0.0887> ft/sec
+
+
+Progress report at: 00:04:02.0
+Nothing of Interest has happened
+ ball:0 position: <101.22, 101.22>           velocity: <0.0878, 0.0878> ft/sec
+
+
+Progress report at: 00:04:03.0
+Nothing of Interest has happened
+ ball:0 position: <101.30, 101.30>           velocity: <0.0870, 0.0870> ft/sec
+
+
+Progress report at: 00:04:04.0
+Nothing of Interest has happened
+ ball:0 position: <101.39, 101.39>           velocity: <0.0861, 0.0861> ft/sec
+
+
+Progress report at: 00:04:05.0
+Nothing of Interest has happened
+ ball:0 position: <101.48, 101.48>           velocity: <0.0852, 0.0852> ft/sec
+
+
+Progress report at: 00:04:06.0
+Nothing of Interest has happened
+ ball:0 position: <101.56, 101.56>           velocity: <0.0844, 0.0844> ft/sec
+
+
+Progress report at: 00:04:07.0
+Nothing of Interest has happened
+ ball:0 position: <101.65, 101.65>           velocity: <0.0835, 0.0835> ft/sec
+
+
+Progress report at: 00:04:08.0
+It Seems all balls are at rest, Collision not Possible
+ ball:0 position: <101.73, 101.73>           velocity: <at rest>
+
+.
+.
+======================================
+... Testing SoccerSim valid ball should go out of bounds...
+======================================
+
+The pole is at <142.81, 480.14>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 1.0 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <10.00, 10.00>           velocity: <1000.0000, 1000.0000> ft/sec
+
+
+Progress report at: 00:00:01.0
+It Seems I have fallen off the field!
+ ball:0 position: <1010.00, 1010.00>           velocity: <990.0000, 990.0000> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+======================================
+
+The pole is at <633.35, 55.21>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 0.1 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <200.00, 200.00>           velocity: <10.0000, 10.0000> ft/sec
+ ball:1 position: <100.00, 100.00>           velocity: <-100.0000, -100.0000> ft/sec
+ ball:2 position: <150.00, 150.00>           velocity: <200.0000, 200.0000> ft/sec
+ ball:3 position: <175.00, 175.00>           velocity: <-110.0000, -110.0000> ft/sec
+ ball:4 position: <20.00, 20.00>           velocity: <1.0000, 1.0000> ft/sec
+ ball:5 position: <50.00, 50.00>           velocity: <-5.0000, -5.0000> ft/sec
+
+
+Progress report at: 00:00:00.1
+Nothing of Interest has happened
+ ball:0 position: <201.00, 201.00>           velocity: <9.9900, 9.9900> ft/sec
+ ball:1 position: <90.00, 90.00>           velocity: <-99.9000, -99.9000> ft/sec
+ ball:2 position: <170.00, 170.00>           velocity: <199.8000, 199.8000> ft/sec
+ ball:3 position: <164.00, 164.00>           velocity: <-109.8900, -109.8900> ft/sec
+ ball:4 position: <20.10, 20.10>           velocity: <0.9990, 0.9990> ft/sec
+ ball:5 position: <49.50, 49.50>           velocity: <-4.9950, -4.9950> ft/sec
+
+
+Progress report at: 00:00:00.2
+Nothing of Interest has happened
+ ball:0 position: <202.00, 202.00>           velocity: <9.9800, 9.9800> ft/sec
+ ball:1 position: <80.01, 80.01>           velocity: <-99.8001, -99.8001> ft/sec
+ ball:2 position: <189.98, 189.98>           velocity: <199.6002, 199.6002> ft/sec
+ ball:3 position: <153.01, 153.01>           velocity: <-109.7801, -109.7801> ft/sec
+ ball:4 position: <20.20, 20.20>           velocity: <0.9980, 0.9980> ft/sec
+ ball:5 position: <49.00, 49.00>           velocity: <-4.9900, -4.9900> ft/sec
+
+
+Progress report at: 00:00:00.3
+Nothing of Interest has happened
+ ball:0 position: <203.00, 203.00>           velocity: <9.9700, 9.9700> ft/sec
+ ball:1 position: <70.03, 70.03>           velocity: <-99.7003, -99.7003> ft/sec
+ ball:2 position: <209.94, 209.94>           velocity: <199.4006, 199.4006> ft/sec
+ ball:3 position: <142.03, 142.03>           velocity: <-109.6703, -109.6703> ft/sec
+ ball:4 position: <20.30, 20.30>           velocity: <0.9970, 0.9970> ft/sec
+ ball:5 position: <48.50, 48.50>           velocity: <-4.9850, -4.9850> ft/sec
+
+
+Progress report at: 00:00:00.4
+Nothing of Interest has happened
+ ball:0 position: <203.99, 203.99>           velocity: <9.9601, 9.9601> ft/sec
+ ball:1 position: <60.06, 60.06>           velocity: <-99.6006, -99.6006> ft/sec
+ ball:2 position: <229.88, 229.88>           velocity: <199.2012, 199.2012> ft/sec
+ ball:3 position: <131.07, 131.07>           velocity: <-109.5607, -109.5607> ft/sec
+ ball:4 position: <20.40, 20.40>           velocity: <0.9960, 0.9960> ft/sec
+ ball:5 position: <48.00, 48.00>           velocity: <-4.9800, -4.9800> ft/sec
+
+
+Progress report at: 00:00:00.5
+Nothing of Interest has happened
+ ball:0 position: <204.99, 204.99>           velocity: <9.9501, 9.9501> ft/sec
+ ball:1 position: <50.10, 50.10>           velocity: <-99.5010, -99.5010> ft/sec
+ ball:2 position: <249.80, 249.80>           velocity: <199.0020, 199.0020> ft/sec
+ ball:3 position: <120.11, 120.11>           velocity: <-109.4511, -109.4511> ft/sec
+ ball:4 position: <20.50, 20.50>           velocity: <0.9950, 0.9950> ft/sec
+ ball:5 position: <47.50, 47.50>           velocity: <-4.9750, -4.9750> ft/sec
+
+
+Progress report at: 00:00:00.6
+Nothing of Interest has happened
+ ball:0 position: <205.99, 205.99>           velocity: <9.9401, 9.9401> ft/sec
+ ball:1 position: <40.15, 40.15>           velocity: <-99.4015, -99.4015> ft/sec
+ ball:2 position: <269.70, 269.70>           velocity: <198.8030, 198.8030> ft/sec
+ ball:3 position: <109.16, 109.16>           velocity: <-109.3416, -109.3416> ft/sec
+ ball:4 position: <20.60, 20.60>           velocity: <0.9940, 0.9940> ft/sec
+ ball:5 position: <47.01, 47.01>           velocity: <-4.9701, -4.9701> ft/sec
+
+
+Progress report at: 00:00:00.7
+Nothing of Interest has happened
+ ball:0 position: <206.98, 206.98>           velocity: <9.9302, 9.9302> ft/sec
+ ball:1 position: <30.21, 30.21>           velocity: <-99.3021, -99.3021> ft/sec
+ ball:2 position: <289.58, 289.58>           velocity: <198.6042, 198.6042> ft/sec
+ ball:3 position: <98.23, 98.23>           velocity: <-109.2323, -109.2323> ft/sec
+ ball:4 position: <20.70, 20.70>           velocity: <0.9930, 0.9930> ft/sec
+ ball:5 position: <46.51, 46.51>           velocity: <-4.9651, -4.9651> ft/sec
+
+
+Progress report at: 00:00:00.8
+It Seems I have crashed into a ball!
+ ball:0 position: <207.97, 207.97>           velocity: <9.9203, 9.9203> ft/sec
+ ball:1 position: <20.28, 20.28>           velocity: <-99.2028, -99.2028> ft/sec
+ ball:2 position: <309.44, 309.44>           velocity: <198.4056, 198.4056> ft/sec
+ ball:3 position: <87.31, 87.31>           velocity: <-109.1231, -109.1231> ft/sec
+ ball:4 position: <20.80, 20.80>           velocity: <0.9920, 0.9920> ft/sec
+ ball:5 position: <46.01, 46.01>           velocity: <-4.9601, -4.9601> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================
+
+The pole is at <495.62, 88.75>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 1.234 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <200.00, 200.00>           velocity: <10.0000, 10.0000> ft/sec
+ ball:1 position: <100.00, 100.00>           velocity: <-100.0000, -100.0000> ft/sec
+ ball:2 position: <175.00, 175.00>           velocity: <-110.0000, -110.0000> ft/sec
+ ball:3 position: <20.00, 20.00>           velocity: <1.0000, 1.0000> ft/sec
+ ball:4 position: <50.00, 50.00>           velocity: <-5.0000, -5.0000> ft/sec
+
+
+Progress report at: 00:00:01.23
+Nothing of Interest has happened
+ ball:0 position: <212.34, 212.34>           velocity: <9.8766, 9.8766> ft/sec
+ ball:1 position: <-23.40, -23.40>           velocity: <-98.7660, -98.7660> ft/sec
+ ball:2 position: <39.26, 39.26>           velocity: <-108.6426, -108.6426> ft/sec
+ ball:3 position: <21.23, 21.23>           velocity: <0.9877, 0.9877> ft/sec
+ ball:4 position: <43.83, 43.83>           velocity: <-4.9383, -4.9383> ft/sec
+
+
+Progress report at: 00:00:02.47
+Nothing of Interest has happened
+ ball:0 position: <224.53, 224.53>           velocity: <9.7547, 9.7547> ft/sec
+ ball:1 position: <-145.28, -145.28>           velocity: <-97.5472, -97.5472> ft/sec
+ ball:2 position: <-94.80, -94.80>           velocity: <-107.3020, -107.3020> ft/sec
+ ball:3 position: <22.45, 22.45>           velocity: <0.9755, 0.9755> ft/sec
+ ball:4 position: <37.74, 37.74>           velocity: <-4.8774, -4.8774> ft/sec
+
+
+Progress report at: 00:00:03.7
+Nothing of Interest has happened
+ ball:0 position: <236.57, 236.57>           velocity: <9.6343, 9.6343> ft/sec
+ ball:1 position: <-265.65, -265.65>           velocity: <-96.3435, -96.3435> ft/sec
+ ball:2 position: <-227.22, -227.22>           velocity: <-105.9778, -105.9778> ft/sec
+ ball:3 position: <23.66, 23.66>           velocity: <0.9634, 0.9634> ft/sec
+ ball:4 position: <31.72, 31.72>           velocity: <-4.8172, -4.8172> ft/sec
+
+
+Progress report at: 00:00:04.94
+It Seems I have crashed into a ball!
+ ball:0 position: <248.45, 248.45>           velocity: <9.5155, 9.5155> ft/sec
+ ball:1 position: <-384.54, -384.54>           velocity: <-95.1546, -95.1546> ft/sec
+ ball:2 position: <-357.99, -357.99>           velocity: <-104.6701, -104.6701> ft/sec
+ ball:3 position: <24.85, 24.85>           velocity: <0.9515, 0.9515> ft/sec
+ ball:4 position: <25.77, 25.77>           velocity: <-4.7577, -4.7577> ft/sec
+
+.
+.
+======================================
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+======================================
+
+The pole is at <801.57, 379.02>
+
+The field is 1000.0 by 1000.0
+
+The time slice value is 10.0 seconds
+
+Progress report at: 00:00:00.0
+Nothing of Interest has happened
+ ball:0 position: <150.00, 150.00>           velocity: <10.0000, 10.0000> ft/sec
+ ball:1 position: <100.00, 100.00>           velocity: <-100.0000, -100.0000> ft/sec
+ ball:2 position: <200.00, 200.00>           velocity: <200.0000, 200.0000> ft/sec
+ ball:3 position: <250.00, 250.00>           velocity: <-110.0000, -110.0000> ft/sec
+ ball:4 position: <20.00, 20.00>           velocity: <1.0000, 1.0000> ft/sec
+ ball:5 position: <50.00, 50.00>           velocity: <-5.0000, -5.0000> ft/sec
+ ball:6 position: <-100.00, -100.00>           velocity: <200.0000, 200.0000> ft/sec
+ ball:7 position: <-200.00, -200.00>           velocity: <300.0000, 300.0000> ft/sec
+ ball:8 position: <-110.00, -110.00>           velocity: <20.0000, 20.0000> ft/sec
+ ball:9 position: <1.00, 1.00>           velocity: <50.0000, 50.0000> ft/sec
+
+
+Progress report at: 00:00:10.0
+It Seems I have fallen off the field!
+ ball:0 position: <250.00, 250.00>           velocity: <9.0000, 9.0000> ft/sec
+ ball:1 position: <-900.00, -900.00>           velocity: <-90.0000, -90.0000> ft/sec
+ ball:2 position: <2200.00, 2200.00>           velocity: <180.0000, 180.0000> ft/sec
+ ball:3 position: <-850.00, -850.00>           velocity: <-99.0000, -99.0000> ft/sec
+ ball:4 position: <30.00, 30.00>           velocity: <0.9000, 0.9000> ft/sec
+ ball:5 position: <0.00, 0.00>           velocity: <-4.5000, -4.5000> ft/sec
+ ball:6 position: <1900.00, 1900.00>           velocity: <180.0000, 180.0000> ft/sec
+ ball:7 position: <2800.00, 2800.00>           velocity: <270.0000, 270.0000> ft/sec
+ ball:8 position: <90.00, 90.00>           velocity: <18.0000, 18.0000> ft/sec
+ ball:9 position: <501.00, 501.00>           velocity: <45.0000, 45.0000> ft/sec
+
+.
+.
+======================================
+... End of SoccerSim Testing...
+======================================
