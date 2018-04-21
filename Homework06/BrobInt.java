@@ -1,7 +1,7 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * File name  :  BrobInt.java
  * Purpose    :  Learning exercise to implement arbitrarily large numbers and their operations
- * @author    :  Bob
+ * @author    :  B.J. Johnson
  * Date       :  2017-04-04
  * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
  * Notes      :  None
@@ -40,6 +40,7 @@ public class BrobInt {
    private String internalValue = "";        // internal String representation of this BrobInt
    private String sign          = "";        // "" if no sign(positive), "+" is positive, "-" is negative
    private String reversed      = "";        // the backwards version of the internal String representation
+   private byte   bsign         = 0;         // "0" is positive, "1" is negative
    private int[] intVersion     = null;      // int array for storing the string values; uses the reversed string
    private String noSign        = "";        // string representation without negative sign
    private boolean vd           = false;     // boolean to keep value of validate digits
@@ -55,7 +56,7 @@ public class BrobInt {
 	   vd = validateDigits();  
 	   if (vd == true) {                                            //validates digits before splitting up number into int[]
 		   chunkyMonkey(value);
-		   noSign();                                            //create same string but with no negative sign
+		   noSign();                                             //create same string but with no negative sign
            }
 	   else {
 		   System.out.print("Hey you need to pass in a number!");
@@ -71,10 +72,9 @@ public class BrobInt {
 	   if (internalValue.contains("+")) {
 		   sign = "+";
 	   }
-	   else if (internalValue.contains("-")) {
+	   else if (internalValue.contains("-")) {             //stores classwide variable for sign
 		   sign = "-";
 	   }
-	   
 	   return sign;
    }
    /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,13 +143,13 @@ public class BrobInt {
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to reverse the value of this BrobInt
-   *  @return BrobInt that is the reverse of the value of this BrobInt
+   *  @return BrobInt that is the reverse of the value of this BrobInt (no parameters)
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
   	  String reverse = "";                                               //declare reverse as an empty string
   	  int num = internalValue.length() - 1;                            
   	  for (int i = num; i > -.5; i--) {                                  //for loop going from the last letter of the input string 
-  		  reverse += internalValue.charAt(i);                        //and puts each letter into variable reverse
+  		  reverse += internalValue.charAt(i);                            //and puts each letter into variable reverse
   	  }
 	  BrobInt rev = new BrobInt(reverse);
           return rev;
@@ -174,8 +174,12 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt add( BrobInt gint ) {
 	  String ans = "";
+	  String s = "";
 	  gint.chunkyMonkey(gint.toString());
-	  if ( (gint.sign() == "-") || (sign() == "-") ) {
+	  if ( (gint.sign() == "-") && (sign() == "-") ) {
+		  s = "-";
+	  }
+	  else if ( (gint.sign() == "-") || (sign() == "-") ) {
 		  return subtract(gint);
 	  }
 	  int start = 0;
@@ -212,60 +216,66 @@ public class BrobInt {
 		  		  	total = intVersion[n] + gint.intVersion[n];            //find current total
 					totalLen = String.valueOf(total).length();             //number of digits in total		                                                 
 					if (n > 0) {
-						ptotal = (intVersion[n-1] + gint.intVersion[n-1]);       //if statement to create previous total if not first iteration (n=0)
-						gintLen = String.valueOf(gint.intVersion[n-1]).length(); //number of digits in previous int[]
-						intLen = String.valueOf(intVersion[n-1]).length();       //number of digits in previous gint[] 
+					    ptotal = (intVersion[n-1] + gint.intVersion[n-1]);       //if statement to create previous total if not first iteration (n=0)
+					    gintLen = String.valueOf(gint.intVersion[n-1]).length(); //number of digits in previous int[]
+					    intLen = String.valueOf(intVersion[n-1]).length();       //number of digits in previous gint[] 
 					} 
 					if ( (String.valueOf(ptotal).length() >  gintLen) && (String.valueOf(ptotal).length() > intLen) ) {  
 							 //if previous total has carry add a carry to last char in this total sequence
-					    carry = 1;
+				            carry = 1;
 					    char[] totalc = String.valueOf(total).toCharArray();                                    //characters that are part of answer(ans)
-					    totalc[totalLen-1] = (char) (Integer.valueOf(totalc[totalLen-1]) + carry);              //add carry if necessary
+				            totalc[totalLen-1] = (char) (Integer.valueOf(totalc[totalLen-1]) + carry);              //add carry if necessary
 		  			    String specific = String.valueOf(totalc).substring(0,(String.valueOf(total).length()));
-				            carry = 0;
-		  			    ans = specific + ans;                     //add total (includes carry) to answer	
+					    carry = 0;
+		  			    ans = specific + ans;                 //add total (includes carry) to answer	
 					}
 					else {
 						ans = String.valueOf(total) + ans;    //if no carry, add this total to answer
 					}
 	  			        if (((rest - iterations) > 0) && ((1+n) == iterations)) {
-  			                   int left = bigger.intVersion.length;
-					   int counter = iterations;
+  			                    int left = bigger.intVersion.length;
+					    int counter = iterations;
   			                    for (int i = counter; i < left; i++) {
-  				               int toCopi = bigger.intVersion[i];
-  				               ans = String.valueOf(toCopi) + ans;
+  				                int toCopi = bigger.intVersion[i];
+  				                ans = String.valueOf(toCopi) + ans;
   			                    }
-	                                }	
+	  			        }	
 		  }
 		  else if ( (totalLen > adderLen) && (totalLen > addenedLen) ) {     
 			  total = intVersion[n] + gint.intVersion[n];                    //find current total
 			  totalLen = String.valueOf(total).length();                     //number of digits in total
 			  char[] totalc = String.valueOf(total).toCharArray();          //char array to choose specific numbers (all except first)        
-				if (n > 0) {  
-			  	    ptotal = (intVersion[n-1] + gint.intVersion[n-1]);       //previous total (found if n>0)
-					gintLen = String.valueOf(gint.intVersion[n-1]).length(); //number of digits in previous int[]
-					intLen = String.valueOf(intVersion[n-1]).length();       //number of digits in previous gint[]
-			        }
-  			        if ( (String.valueOf(ptotal).length() >  gintLen)            //if previous total is greater than length of previous
-  			             && (String.valueOf(ptotal).length() > intLen) ) {       //gint[] and int[], must be carry
-					carry = 1;
-			     	        totalc[totalLen-1] = (char) (Integer.valueOf(totalc[totalLen-1]) + carry); //add carry to last integer
-					carry = 0;
-  			        } 		         	          					  
+			  if (n > 0) {  
+			      ptotal = (intVersion[n-1] + gint.intVersion[n-1]);       //previous total (found if n>0)
+			      gintLen = String.valueOf(gint.intVersion[n-1]).length(); //number of digits in previous int[]
+			      intLen = String.valueOf(intVersion[n-1]).length();       //number of digits in previous gint[]
+			  }
+  			  if ( (String.valueOf(ptotal).length() >  gintLen)         //if previous total is greater than length of previous
+  			    && (String.valueOf(ptotal).length() > intLen) ) {       //gint[] and int[], must be carry
+				carry = 1;
+			     	totalc[totalLen-1] = (char) (Integer.valueOf(totalc[totalLen-1]) + carry); //add carry to last integer
+				carry = 0;
+  			   } 		         	          					  
 			  String specific = String.valueOf(totalc).substring(1,(String.valueOf(total).length()));   //add takes total and puts into string (specific)
 			  ans = specific + ans;                                                                     //this is added to answer
 			  if ((1+n) == iterations) {
-				  ans = String.valueOf(totalc[0]) + ans;                       //if the last addition, puts back character that was taken out as carry
+		              ans = String.valueOf(totalc[0]) + ans;                       //if the last addition, puts back character that was taken out as carry
 			  }
 			  if (((rest - iterations) > 0) && ((1+n) == iterations)) {
-  			           int left = bigger.intVersion.length;
-				   int counter = iterations;
-  			           for (int i = counter; i < left; i++) {
-  				           int toCopi = bigger.intVersion[i];
-  				           ans = String.valueOf(toCopi) + ans;
-  			           }
+  			      int left = bigger.intVersion.length;
+			      int counter = iterations;
+  			      for (int i = counter; i < left; i++) {
+  			          int toCopi = bigger.intVersion[i];
+  				  ans = String.valueOf(toCopi) + ans;
+  			      }
 	                  }
 		  }
+	  }
+	  if ( ans.contains("-") ) {
+              ans = ans;
+	  }
+	  else if (s == "-") {
+	      ans = s + ans;
 	  }  	  
 	  BrobInt added = new BrobInt(ans);
           return added;
@@ -280,8 +290,6 @@ public class BrobInt {
    public BrobInt subtract( BrobInt gint ) {
 	  BrobInt currentNoSign = new BrobInt(this.noSign);
 	  BrobInt gintNoSign = new BrobInt(gint.noSign);
-	  gint.toArray(gint.intVersion);
-	  toArray(intVersion);
 	  String ans = "";
 	  String s = "";                                                     //will hold the sign value
 	  BrobInt bigger = null;
@@ -289,66 +297,73 @@ public class BrobInt {
 	  BrobInt difference = gint;
 	  int checker = currentNoSign.intVersion[intVersion.length-1] - gintNoSign.intVersion[gint.intVersion.length-1]; //will be used to check if int or gint is bigger
 	  if (true == equals(gint)) {                                        //check if BrobInts are the same if so difference is 0
-		  difference = ZERO;
-		  return difference;
+              difference = ZERO;
+	      return difference;
 	  }
 	  else if ( 0 < checker ) {                                          //Decide which one is bigger and smaller
-		  bigger = new BrobInt(internalValue);                                           
-                  smaller = gint;
+	      bigger = new BrobInt(internalValue);                                           
+              smaller = gint;
 	  }                                                                  //then assign BrobInt bigger and smaller accordingly
 	  else if ( 0 > checker  ) {
-		  bigger = gint;
-                  smaller = new BrobInt(internalValue);
+	      bigger = gint;
+              smaller = new BrobInt(internalValue);
 	  }
 	  if ( (sign == "-") && (gint.sign != "-") ) {                        //if subtracting negative numbers, add values and attach negative sign
-		  ans = "-" + String.valueOf(currentNoSign.add(gintNoSign)); 
-		  difference = new BrobInt(ans);
-		  return difference;   
+	      ans = "-" + String.valueOf(currentNoSign.add(gintNoSign)); 
+	      difference = new BrobInt(ans);
+	      return difference;   
 	  }
 	  else if ( (sign != "-") && (gint.sign == "-") ) {                   //if subtracting by negative number, add values and attach positive sign
-		  ans = "+" + String.valueOf(currentNoSign.add(gintNoSign)); 
-		  difference = new BrobInt(ans);
-		  return difference;   
+	      ans = "+" + String.valueOf(currentNoSign.add(gintNoSign)); 
+	      difference = new BrobInt(ans);
+	      return difference;   
 	  }
-	  if ( ((gint.sign == "-") && (sign == "-")) || ("-" != bigger.sign) && ("-" != smaller.sign) && (gint == bigger)) {
-		  s = "-";                                                         //negative sign if bigger value is negative
-	  } 
-	  else if ( (gint.sign != "-") && (sign != "-")) {            //positive sign if bigger value is positive
-		  s = "+";
+	  if ( (bigger == gint) &&  ( (gint.sign != "-") && (sign != "-") )  ) {
+		  s = "-";
 	  }
+//	  if ( ((gint.sign == "-") && (sign == "-")) || ("-" != bigger.sign) && ("-" != smaller.sign) && (gint == bigger)) {
+///		  s = "-";                                                         //negative sign if bigger value is negative
+//	  } 
+//	  else if ( (gint.sign != "-") && (sign != "-")) {            //positive sign if bigger value is positive
+//		  s = "+";
+//	  }
 	  int iterations = smaller.intVersion.length;                               //amount of subtractions needed to be done
-	  int total = bigger.intVersion[0] - smaller.intVersion[0];                        //find first subtraction
-	  System.out.println("the bigger Brob is: " + bigger.noSign + " smaller Brob is: " + smaller.noSign);
-	  System.out.println("first subtraction: " + total);
+	  int total = bigger.intVersion[0] - smaller.intVersion[0];                 //find first subtraction
 	  if (iterations == 1) {
 		  return difference = new BrobInt(String.valueOf(total));
 	  }
-	  for (int n = 1; n < iterations; n++) {
-		  System.out.println("\nptotal is: " + total + " iterations is " + iterations);
-		  total = bigger.intVersion[n] - smaller.intVersion[n];                        //initialize to first total value of two arrays of intVersion
-		  System.out.println("at iteration " + n + " total is " + total + "\n" + " ans is " + ans + "\n");
+	  if ((bigger.intVersion.length > 1) && (smaller.intVersion.length > 1)) {
+	      for (int n = 1; n < iterations; n++) {
+	          total = bigger.intVersion[n] - smaller.intVersion[n];                        //initialize to first total value of two arrays of intVersion
 		  int ptotal = bigger.intVersion[n-1] - smaller.intVersion[n-1];             //set previous total 
 		  if (ptotal < 0) {
-			  int specific = ((int) Math.pow(10,8)) - Math.abs(ptotal);         //will subract previous total by "borrow" 
-			  ans = String.valueOf(specific) + ans;                             //add this total to answer string
-			  System.out.println("after ans is " + ans);
-			  total = total - 1;                                                //will subtract one in this current total as borrow
-			  ans = String.valueOf(total) + ans;
+	              int specific = ((int) Math.pow(10,8)) - Math.abs(ptotal);         //will subract previous total by "borrow" 
+		      ans = String.valueOf(specific) + ans;                             //add this total to answer string
+		      total = total - 1;                                                //will subtract one in this current total as borrow
+		      ans = String.valueOf(total) + ans;
 		  }
 		  else {
-			  ans = String.valueOf(ptotal) + ans;
+		      ans = String.valueOf(ptotal) + ans;
 		  } 
 		  if ( ((n+1) >= iterations) && ( (bigger.intVersion.length > iterations) || ( smaller.intVersion[iterations-1] == 0)) ) { 
 			   //determine if there are terms to bring down
-			  int left = bigger.intVersion.length ;
-			  int counter = iterations - 1;
-			  for (int i = counter; i < left; i++) {
-				  int toCopy = bigger.intVersion[i];
-				  ans = String.valueOf(toCopy) + ans;
-			  }
+	              int left = bigger.intVersion.length ;
+		      int counter = iterations - 1;
+		      for (int i = counter; i < left; i++) {
+		          int toCopy = bigger.intVersion[i];
+			  ans = String.valueOf(toCopy) + ans;
+		      }
 		  }	 
+	      }
+		
+	  }
+	  else {
+              ans = String.valueOf(total);
 	  }
 	  ans = s + ans;
+	  if ( (ans.charAt(0) == '-') && (ans.charAt(1) == '-')){
+	      ans = ans.substring(2);
+	  }
 	  difference = new BrobInt(ans);
           return difference;
    }
@@ -358,13 +373,20 @@ public class BrobInt {
    *  @param  gint         BrobInt to multiply by this
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt multiply( BrobInt gint ) {
-	  String mult = "";
-	  BrobInt stop = gint.subtract(TWO);
-	  for (BrobInt start = ZERO; start.equals(gint); start.add(ONE)) {
-	  	  mult = String.valueOf(add(gint))+ mult;        //repeated addition that goes until i == gint
+   public BrobInt multiply( BrobInt gint ) { 
+	  BrobInt stop = gint;
+	  BrobInt adder = add(gint);
+	  stop = stop.subtract(ONE);
+	  while (!stop.equals(ZERO)) {
+		  stop = stop.subtract(ONE);
+	  	  adder = add(adder);                                           //repeated addition that goes until i == gint
 	  }
-	  BrobInt product = new BrobInt(mult);
+	  adder = adder.subtract(gint);
+	  String ans = String.valueOf(adder);
+          if ( ((gint.sign == "-") && (sign != "-")) || ((gint.sign != "-") && (sign == "-")) ) { //add negative if necessary
+	      ans = "-" + ans;
+          }
+	  BrobInt product = new BrobInt(ans);
 	  return product;
    }
 
@@ -374,7 +396,58 @@ public class BrobInt {
    *  @return BrobInt that is the dividend of this BrobInt divided by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt divide( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+	   if (this.compareTo(gint) == (-1)) {  //if dividing by bigger number equals zero
+               return ZERO;
+	   }
+	   if (this.equals(gint)) {             //if dividing by same number equals one
+	       return ONE;
+	   }
+           if (gint.equals(ZERO)) {             //prevent from dividing by zero
+	       throw new IllegalArgumentException("cannot divide by zero");
+           }
+	   String ans = "";
+	   String q = "";
+	   BrobInt d1 = gint;                   //divisor
+	   BrobInt d2 = this;                   //number being divided
+	   int n = d1.toString().length();      //set n == to length of divisor
+	   BrobInt d3 = new BrobInt(d2.toString().substring(0,n));  
+	   //copy n characters from number being divided for subtraction
+	   if (d1.compareTo(d3) == 1 ) {
+	       n = n+1;       //if divisor is greater than d3,should take on another digit
+	       d3 = new BrobInt(this.toString().substring(0,n));
+	   }
+	   while (n != d2.toString().length()) { //loop stops once have looked at all numbers
+	       while (d3.compareTo(d1) == 1) {  //loop stops when number subtracted is greater than divisor
+	           int subtract = Integer.valueOf(String.valueOf(d3)) % Integer.valueOf(String.valueOf(d1));
+		   if (subtract > 0) {
+		       q = String.valueOf( (Integer.valueOf(String.valueOf(d3)) - subtract)/Integer.valueOf(String.valueOf(d1)));
+		   }            
+		   else if (subtract == 0) {
+		             q = String.valueOf((Integer.valueOf(String.valueOf(d3)) - subtract)/Integer.valueOf(String.valueOf(d1)));
+		   }
+		   BrobInt multiplier = new BrobInt(q);
+		   BrobInt subtractor = d1.multiply(multiplier); 
+		   d3 = d3.subtract(subtractor);                      //uses mod to find remainder then subracts to get number that gets integer
+	           ans = ans + q;                                     //when divided, then multiplies by this (q) and subtracts for next iteration
+		   if ( n == (d2.toString().length()) ) { 
+		       break;
+		   }
+		   String extract = "" + d2.toString().charAt(n);     //to bring down next number
+		   d3 = new BrobInt(d3.toString() + extract);
+		   n++;
+	       } 
+	   }
+	   if (ans.length() < d1.toString().length()) {
+	       int iterations = d1.toString().length() - ans.length();     //determine if stopped prematurely
+	       for (int i = 0; i < iterations; i++) {
+	           ans = ans + "0";
+	       }
+	   }
+	   if ( ((gint.sign == "-") && (sign != "-")) || ((gint.sign != "-") && (sign == "-")) ) { //add negative if necessary
+	       ans = "-" + ans;
+	   }
+	   BrobInt answer = new BrobInt(ans);
+	   return answer;
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -383,7 +456,10 @@ public class BrobInt {
    *  @return BrobInt that is the remainder of division of this BrobInt by the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt remainder( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+	   if (this.compareTo(gint) == (-1)) {
+               return ZERO;
+	   }
+	   return this.subtract(this.divide(gint).multiply(gint));       
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -394,20 +470,33 @@ public class BrobInt {
    *        THAT was easy.....
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public int compareTo( BrobInt gint ) {
-       if( internalValue.length() > gint.internalValue.length() ) {
-          return 1;
-       } 
+	   // handle the signs here
+	   if ( 1 == bsign && 0 == gint.bsign ) {
+	         return -1;
+	   } 
+	   else if( 0 == bsign && 1 == gint.bsign ) {
+	         return 1;
+	   }
+
+	        // the signs are the same at this point
+	        // check the length and return the appropriate value
+	        //   1 means this is longer than gint, hence larger
+	        //  -1 means gint is longer than this, hence larger
+           if ( internalValue.length() > gint.internalValue.length() ) {
+               return 1;
+           } 
 	   else if( internalValue.length() < gint.internalValue.length() ) {
-          return (-1);
-       } 
-       else {
-          for( int i = 0; i < internalValue.length(); i++ ) {
-             Character a = Character.valueOf( internalValue.charAt(i) );
-             Character b = Character.valueOf( gint.internalValue.charAt(i) );
-             if( Character.valueOf(a).compareTo( Character.valueOf(b) ) > 0 ) {
-                return 1;
-             } else if( Character.valueOf(a).compareTo( Character.valueOf(b) ) < 0 ) {
-                return (-1);
+               return (-1);
+           } 
+	   else {
+               for ( int i = 0; i < internalValue.length(); i++ ) {
+                   Character a = Character.valueOf( internalValue.charAt(i) );
+                   Character b = Character.valueOf( gint.internalValue.charAt(i) );
+                   if( Character.valueOf(a).compareTo( Character.valueOf(b) ) > 0 ) {
+                       return 1;
+                   } 
+	           else if( Character.valueOf(a).compareTo( Character.valueOf(b) ) < 0 ) {
+                   return (-1);
              }
           }
        }
