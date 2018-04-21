@@ -213,33 +213,33 @@ public class BrobInt {
 		  int gintLen = 100;                                               //number of digits in gint (initial 100 to be > ptotal)
 		  int intLen = 100;                                                //number of digits in int
 		  if ( (totalLen == adderLen) || (totalLen == addenedLen) ) {      //if digits in total == digits in both numbers being added
-		  		  	total = intVersion[n] + gint.intVersion[n];            //find current total
-					totalLen = String.valueOf(total).length();             //number of digits in total		                                                 
-					if (n > 0) {
-					    ptotal = (intVersion[n-1] + gint.intVersion[n-1]);       //if statement to create previous total if not first iteration (n=0)
-					    gintLen = String.valueOf(gint.intVersion[n-1]).length(); //number of digits in previous int[]
-					    intLen = String.valueOf(intVersion[n-1]).length();       //number of digits in previous gint[] 
-					} 
-					if ( (String.valueOf(ptotal).length() >  gintLen) && (String.valueOf(ptotal).length() > intLen) ) {  
-							 //if previous total has carry add a carry to last char in this total sequence
-				            carry = 1;
-					    char[] totalc = String.valueOf(total).toCharArray();                                    //characters that are part of answer(ans)
-				            totalc[totalLen-1] = (char) (Integer.valueOf(totalc[totalLen-1]) + carry);              //add carry if necessary
-		  			    String specific = String.valueOf(totalc).substring(0,(String.valueOf(total).length()));
-					    carry = 0;
-		  			    ans = specific + ans;                 //add total (includes carry) to answer	
-					}
-					else {
-						ans = String.valueOf(total) + ans;    //if no carry, add this total to answer
-					}
-	  			        if (((rest - iterations) > 0) && ((1+n) == iterations)) {
-  			                    int left = bigger.intVersion.length;
-					    int counter = iterations;
-  			                    for (int i = counter; i < left; i++) {
-  				                int toCopi = bigger.intVersion[i];
-  				                ans = String.valueOf(toCopi) + ans;
-  			                    }
-	  			        }	
+		      total = intVersion[n] + gint.intVersion[n];            //find current total
+		      totalLen = String.valueOf(total).length();             //number of digits in total		                                                 
+		      if (n > 0) {
+		          ptotal = (intVersion[n-1] + gint.intVersion[n-1]);       //if statement to create previous total if not first iteration (n=0)
+			  gintLen = String.valueOf(gint.intVersion[n-1]).length(); //number of digits in previous int[]
+			  intLen = String.valueOf(intVersion[n-1]).length();       //number of digits in previous gint[] 
+		      } 
+		      if ( (String.valueOf(ptotal).length() >  gintLen) && (String.valueOf(ptotal).length() > intLen) ) {  
+				//if previous total has carry add a carry to last char in this total sequence
+		          carry = 1;
+			  char[] totalc = String.valueOf(total).toCharArray();                                    //characters that are part of answer(ans)
+		          totalc[totalLen-1] = (char) (Integer.valueOf(totalc[totalLen-1]) + carry);              //add carry if necessary
+		  	  String specific = String.valueOf(totalc).substring(0,(String.valueOf(total).length()));
+			  carry = 0;
+		  	  ans = specific + ans;                 //add total (includes carry) to answer	
+		      }
+		      else {
+			      ans = String.valueOf(total) + ans;    //if no carry, add this total to answer
+		      }
+	  	      if (((rest - iterations) > 0) && ((1+n) == iterations)) {
+  		          int left = bigger.intVersion.length;
+		          int counter = iterations;
+  			  for (int i = counter; i < left; i++) {
+  		              int toCopi = bigger.intVersion[i];
+  			      ans = String.valueOf(toCopi) + ans;
+  			  }
+	  	      }	
 		  }
 		  else if ( (totalLen > adderLen) && (totalLen > addenedLen) ) {     
 			  total = intVersion[n] + gint.intVersion[n];                    //find current total
