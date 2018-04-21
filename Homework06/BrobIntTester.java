@@ -172,7 +172,7 @@ public class BrobIntTester {
                              "        and got: " + g7.toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
-
+	  
       System.out.println( "\n\n    TESTING VALUEOF( LONG ) METHOD:\n" +
                           "    ===============================" );
       System.out.println( "\n    Test 011: Creating several long type values to check the 'valueOf()' method: " );
@@ -247,7 +247,7 @@ public class BrobIntTester {
                              "        and got: " + g12.toString() );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
-
+	  
       try {
          System.out.println( "    Test 014: Adding g11 and g12: " );
          System.out.println( "      expecting: 30 and got " + g11.add( g12 ) );
@@ -475,7 +475,7 @@ public class BrobIntTester {
                              "        and got: " + g7.multiply( g12 ) );
       }
       catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
-
+	  
       System.out.println( "\n    Test 046: Making a seventeenth new BrobInt: "  );
       try {
          g17 = new BrobInt( g17String );
@@ -513,8 +513,8 @@ public class BrobIntTester {
          System.out.println( "      expecting: 17595\n" +
                              "        and got: " + g17.multiply( g18 ) );
       }
-      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
-
+      catch( Exception e ) { System.out.println( "        Exception thrown:  " ); e.printStackTrace() ; }
+	  
       System.out.println( "\n      Test 051: Multiplying g18 by g20 [23 * 37]: " );
       try {
          System.out.println( "      expecting: 851\n" +
@@ -541,7 +541,7 @@ public class BrobIntTester {
          System.out.println( "      expecting: 43443585\n" +
                              "        and got: " + g17.multiply( g19 ) );
       }
-      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  "); e.printStackTrace() ; }
 
       System.out.println( "\n      Test 055: Multiplying g20 by g19 [37 * 56789]: " );
       try {
@@ -557,7 +557,7 @@ public class BrobIntTester {
          System.out.println( "      expecting: 1534\n" +
                              "        and got: " + g19.divide( g20 ) );
       }
-      catch( Exception e ) { System.out.println( "        Exception thrown:  " + e.toString() ); }
+      catch( Exception e ) { System.out.println( "        Exception thrown:  "); e.printStackTrace() ; }
 
       System.out.println( "\n      Test 057: Dividing g17 by g20 [765 / 37]: " );
       try {
