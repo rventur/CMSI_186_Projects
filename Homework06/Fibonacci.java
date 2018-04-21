@@ -97,9 +97,9 @@ public class Fibonacci {
 	  BrobInt previous2 = new BrobInt("1");
 	  BrobInt fibonnaci = null;
 	  for (int i = 2; i < maxCount; i++) {
-		  fibonnaci = previous1.add(previous2);
-		  previous1 = previous2;
-		  previous2 = fibonnaci;
+              fibonnaci = previous1.add(previous2);
+	      previous1 = previous2;
+	      previous2 = fibonnaci;
 	  }
 	  System.out.println("The nth term is: " + String.valueOf(fibonnaci));
 
