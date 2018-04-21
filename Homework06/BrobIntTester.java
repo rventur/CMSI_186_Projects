@@ -347,12 +347,6 @@ public class BrobIntTester {
       catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
 
       try {
-         System.out.println( "    Test 027: Adding g14 and g16 [-234567 + -999999] using bytes (but used ints): " );
-         System.out.println( "      expecting: -1234566 and got " + g14.add( g16 ) );
-      }
-      catch( Exception e ) { System.out.println( "        Exception thrown:  " ); }
-
-      try {
          System.out.println( "    Test 028: Adding g14 and g16 [-234567 + -999999] using ints: " );
          System.out.println( "      expecting: -1234566 and got " + g14.add( g16 ) );
       }
