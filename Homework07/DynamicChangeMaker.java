@@ -20,9 +20,9 @@
 
 public class DynamicChangeMaker {
 	
-	public static int targetValue = 0;
-	public static Tuple coins = null;       //coin denominations
-	public static int[] demon = null;       //representation of Tuple at int array
+    public static int targetValue = 0;
+    public static Tuple coins = null;       //coin denominations
+    public static int[] demon = null;       //representation of Tuple at int array
 
     public DynamicChangeMaker () {
   	  super();	
@@ -31,40 +31,40 @@ public class DynamicChangeMaker {
     /**
      *  Method to validate the tuple passed in 
      *  @param   int [] that will be checked for any negative, empty values or repeats and throw exception if occurs
-		@param   int that will be checked if empty or negative and throw exception if occurs
+     *  @param   int that will be checked if empty or negative and throw exception if occurs
      *  no return value
      *  @throws  NumberFormatException
      */
      public void badData(int[] denom, int targ) throws NumberFormatException {
-		 for (int i = 0; i < denom.length; i++) {
-		     if (0 >= denom[i]) {
-			     throw new NumberFormatException("Bad data: can't have an empty or negative coin");
-		     }
-			 for (int j = 0; j < denom.length; j++) {
-				 if (i == j) {
-					 continue;
-				 }
-				 else if (denom[i] == denom[j]) { 
-				 	throw new NumberFormatException("Bad data: can't have repeated coins");
-				 }
-			 }
-		 }
+	for (int i = 0; i < denom.length; i++) {
+            if (0 >= denom[i]) {
+		throw new NumberFormatException("Bad data: can't have an empty or negative coin");
+            }
+	    for (int j = 0; j < denom.length; j++) {
+		if (i == j) {
+		    continue;
+		}
+	        else if (denom[i] == denom[j]) { 
+		    throw new NumberFormatException("Bad data: can't have repeated coins");
+		}
+	    }
+	 }
          if (targ <= 0) {
-			 throw new NumberFormatException("Bad data: can't reach negative or empty target");
+		throw new NumberFormatException("Bad data: can't reach negative or empty target");
          }
 			
-	}
+     }
      
   
   
     /**
-     *  Method to validate the angle argument
+     *  Method to validate the arguments
      *  @param   argValue  String from the main programs args[0] input
      *  @throws  NumberFormatException
-	 *	no return, method stores variables classwide and checks for bad data using previous method
+     *	no return, method stores variables classwide and checks for bad data using previous method
      */
      public void validateArg (String args[]) throws NumberFormatException {
-	    String[] demons = args[0].split(",");
+	        String[] demons = args[0].split(",");
 		if (args.length <= 1) {
 			throw new NumberFormatException("must input a target value and coin denominations");
 		}
@@ -77,7 +77,7 @@ public class DynamicChangeMaker {
 		catch (NumberFormatException e) {
 			System.out.println("\n     Error, input a non-negative number.\n     Pobrecito!");
 		}
- 	    try {
+ 	        try {
 		    if (args[1].length() != 1) {
 		  	    throw new NumberFormatException("Bad Data: Must enter only one target value");
 		    }
@@ -85,13 +85,19 @@ public class DynamicChangeMaker {
 		    if ( 0 >= targetValue) {
 			    throw new NumberFormatException("Can't have a 0 or negative target");    //check if arg is valid can only be number
 		    }                                                                            //that is not zero or a negative
- 	    }
- 	    catch (NumberFormatException e) {
+ 	        }
+ 	        catch (NumberFormatException e) {
  		    System.out.println("\n     Error, input a non-negative number.\n     Pobrecito!");
- 	    }
+ 	        }
 		badData(demon,targetValue);
      }
-	 
+	
+     /**
+     *  Method to optimize amount of change that can be made
+     *  @param   int[] with coin denominations to be used
+     *  @param   int   specifying what value to be made with coins
+     *	@return, tuple with amount of coins needed to reach target value
+     */	
      public static Tuple makeChangeWithDynamicProgramming(int[] denominations, int target) {
 		 DynamicChangeMaker d = new DynamicChangeMaker();
 		 d.badData(denominations,target);
@@ -107,22 +113,22 @@ public class DynamicChangeMaker {
 				 else {
 					 if ( j < denominations[i]) {             //if current target - index less than zero, must be impossible
 					     matrix[i][j] = Tuple.IMPOSSIBLE;
-						 if (j >= denominations[i]) {
-				             if ( (matrix[i][j-denominations[i]] != Tuple.IMPOSSIBLE)) {   //check to see if solution backwards 
+					     if (j >= denominations[i]) {
+				                 if ( (matrix[i][j-denominations[i]] != Tuple.IMPOSSIBLE)) {   //check to see if solution backwards 
 					             matrix[i][j] = matrix[i][j].add(matrix[i][j-denominations[i]]);          //and add this value
-				             } 
+				                 } 
 					     }
 						 if (i != 0) {
-							 if ((matrix[i-1][j] == Tuple.IMPOSSIBLE)) {
-								 matrix[i][j] = matrix[i][j];
-							 }
-							 else {
-							     matrix[i][j] = matrix[i-1][j];
-							 }				 	
+						     if ((matrix[i-1][j] == Tuple.IMPOSSIBLE)) {
+						         matrix[i][j] = matrix[i][j];
 						 }
+						 else {
+						     matrix[i][j] = matrix[i-1][j];
+						 }				 	
+					 }
 				     }
 				     else {                                 //if gets here then means you can go backward
-						 Tuple zeroTuple = new Tuple(rowCount);
+					     Tuple zeroTuple = new Tuple(rowCount);
 					     zeroTuple.setElement(i,1);         //able to take one out so add one to tuple
 				 	     matrix[i][j] = zeroTuple;          //set this value
 					     if ( (j - denominations[i]) >= 0 ) {   //check to see if solution backwards 
@@ -139,15 +145,15 @@ public class DynamicChangeMaker {
 							 }
 							 else {
 							     matrix[i][j] = matrix[i-1][j];
-						     }
+						         }
 					     }
 				     }			     
-			     }
+			         }
 		     }    
 		 }
-    	 answer = matrix[rowCount-1][columnCount-1];
-		 System.out.println("answer is: " + answer.toString());
-  	     return answer;
+    	         answer = matrix[rowCount-1][columnCount-1];
+	         System.out.println("answer is: " + answer.toString());
+  	         return answer;
      }
 	 
      public static void main (String args[]) {
