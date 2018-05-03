@@ -4,7 +4,7 @@
  *  Author        :  B.J. Johnson
  *  Author        :  Roberto Ventura
  *  Date          :  2017-02-08
- *  Description   :  This file is an example of dynamic programming. The approach to this 
+ *  Description   :  This file is an example of dynamic programming by optimizing number of coins based on target and denominations 
  *  Notes         :  None
  *  Warnings      :  None
  *  Exceptions    :  None
@@ -53,9 +53,7 @@ public class DynamicChangeMaker {
 		throw new NumberFormatException("Bad data: can't reach negative or empty target");
          }
 			
-     }
-     
-  
+     } 
   
     /**
      *  Method to validate the arguments
@@ -107,52 +105,57 @@ public class DynamicChangeMaker {
 		 Tuple[][] matrix = new Tuple [rowCount][columnCount];
 		 for (int i = 0; i < rowCount; i++) {
 		     for (int j = 0; j < columnCount; j++) {
-				 if (0 == j) {
-					 matrix[i][j] = new Tuple(rowCount);            //first column of zero always tuple of zeros
-				 }
-				 else {
-					 if ( j < denominations[i]) {             //if current target - index less than zero, must be impossible
-					     matrix[i][j] = Tuple.IMPOSSIBLE;
-					     if (j >= denominations[i]) {
-				                 if ( (matrix[i][j-denominations[i]] != Tuple.IMPOSSIBLE)) {   //check to see if solution backwards 
-					             matrix[i][j] = matrix[i][j].add(matrix[i][j-denominations[i]]);          //and add this value
-				                 } 
-					     }
-						 if (i != 0) {
-						     if ((matrix[i-1][j] == Tuple.IMPOSSIBLE)) {
-						         matrix[i][j] = matrix[i][j];
-						 }
-						 else {
-						     matrix[i][j] = matrix[i-1][j];
-						 }				 	
-					 }
-				     }
-				     else {                                 //if gets here then means you can go backward
-					     Tuple zeroTuple = new Tuple(rowCount);
-					     zeroTuple.setElement(i,1);         //able to take one out so add one to tuple
-				 	     matrix[i][j] = zeroTuple;          //set this value
-					     if ( (j - denominations[i]) >= 0 ) {   //check to see if solution backwards 
-							 if (matrix[i][j - denominations[i]] == Tuple.IMPOSSIBLE) {
-							 	 matrix[i][j] = Tuple.IMPOSSIBLE;
-							 }
-						     else {  //if entry backwards is impossible, just impossible
-							     matrix[i][j] = matrix[i][j].add(matrix[i][j-denominations[i]]);          //and add this value		 	  
-						     }
-					     } 
-					     if ( i != 0 ) {
-							 if ((matrix[i-1][j] == Tuple.IMPOSSIBLE)) {
-								 matrix[i][j] = matrix[i][j];
-							 }
-							 else {
-							     matrix[i][j] = matrix[i-1][j];
-						         }
-					     }
-				     }			     
+		         if (0 == j) {
+			     matrix[i][j] = new Tuple(rowCount);            //first column of zero always tuple of zeros
+			 }
+			 else {
+			     if ( (j - denominations[i]) < 0) {             //if current target - index less than zero, must be impossible
+			         matrix[i][j] = Tuple.IMPOSSIBLE;
+				 if (j >= denominations[i]) {
+				     if ( (matrix[i][j-denominations[i]] != Tuple.IMPOSSIBLE)) {   //check to see if solution backwards 
+			                 matrix[i][j] = matrix[i][j].add(matrix[i][j-denominations[i]]);          //and add this value
+				     } 
 			         }
+				 if (i != 0) {
+				     if ((matrix[i-1][j] == Tuple.IMPOSSIBLE)) {
+				         matrix[i][j] = matrix[i][j];
+				     }
+				     else if ((matrix[i][j].isImpossible())) {
+				         matrix[i][j] = matrix[i-1][j];
+				     }
+				     else if ((matrix[i-1][j].total() < matrix[i][j].total()) ) {
+				         matrix[i][j] = matrix[i-1][j];
+				     }				 	
+	                         }
+			     }
+		             else {                                 //if gets here then means you can go backward
+			         Tuple zeroTuple = new Tuple(rowCount);
+			         zeroTuple.setElement(i,1);         //able to take one out so add one to tuple
+				 matrix[i][j] = zeroTuple;          //set this value
+			         if ( (j - denominations[i]) >= 0 ) {   //check to see if solution backwards 
+				     if (matrix[i][j-denominations[i]] == Tuple.IMPOSSIBLE) {
+				            matrix[i][j] = Tuple.IMPOSSIBLE;	
+				     }
+			             else {  //if entry backwards is impossible, just impossible
+					    matrix[i][j] = matrix[i][j].add(matrix[i][j-denominations[i]]);          //and add this value  
+				     }
+			         } 
+				 if ( i != 0 ) {
+				     if ((matrix[i-1][j] == Tuple.IMPOSSIBLE)) {
+					    matrix[i][j] = matrix[i][j];
+				     }
+				     else if ((matrix[i][j].isImpossible())) {
+					    matrix[i][j] = matrix[i-1][j];
+				     }
+				     else if (matrix[i-1][j].total() < matrix[i][j].total() ) {
+					    matrix[i][j] = matrix[i-1][j];
+				     }
+		                 }
+			     }			     
+			 }
 		     }    
 		 }
     	         answer = matrix[rowCount-1][columnCount-1];
-	         System.out.println("answer is: " + answer.toString());
   	         return answer;
      }
 	 
@@ -165,7 +168,5 @@ public class DynamicChangeMaker {
 		 }
 		 dcm.validateArg(args);
 		 dcm.makeChangeWithDynamicProgramming(dcm.demon, dcm.targetValue);
- 
      }
-
 }
